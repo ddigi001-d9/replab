@@ -1,15 +1,15 @@
 import React from 'react';
 import { Trophy } from 'lucide-react';
-import { PROGRAM, exerciseKey } from '../data/program.js';
+import { exerciseKey } from '../data/program.js';
 
-export function StatsScreen({ state }) {
+export function StatsScreen({ program, sets }) {
   const allEntries = [];
-  PROGRAM.weeks.forEach((week, wIdx) => {
+  program.weeks.forEach((week, wIdx) => {
     week.sessions.forEach((session, sIdx) => {
       session.blocks.forEach((block, bIdx) => {
         block.exercises.forEach((ex, eIdx) => {
           const k = exerciseKey(wIdx, sIdx, bIdx, eIdx);
-          const sd = state.sets?.[k] || {};
+          const sd = sets?.[k] || {};
           Object.entries(sd).forEach(([setIdx, data]) => {
             if (data?.done && (data.weight || data.reps)) {
               allEntries.push({

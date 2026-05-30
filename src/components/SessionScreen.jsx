@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { ArrowLeft, X } from 'lucide-react';
 import { ExerciseCard } from './ExerciseCard.jsx';
 import { Timer } from './Timer.jsx';
-import { PROGRAM, exerciseKey } from '../data/program.js';
+import { exerciseKey } from '../data/program.js';
 
-export function SessionScreen({ weekIdx, sessionIdx, state, updateState, onBack }) {
-  const week = PROGRAM.weeks[weekIdx];
+export function SessionScreen({ program, weekIdx, sessionIdx, sets, updateSets, soundEnabled, onBack }) {
+  const week = program.weeks[weekIdx];
   const session = week.sessions[sessionIdx];
   const [showTimer, setShowTimer] = useState(false);
   const [timerSec, setTimerSec] = useState(90);
@@ -14,7 +14,7 @@ export function SessionScreen({ weekIdx, sessionIdx, state, updateState, onBack 
   const doneEx = session.blocks.reduce((sum, b, bIdx) =>
     sum + b.exercises.filter((ex, eIdx) => {
       const k = exerciseKey(weekIdx, sessionIdx, bIdx, eIdx);
-      const sd = state.sets?.[k] || {};
+      const sd = sets?.[k] || {};
       return Array.from({ length: ex.sets }).every((_, i) => sd[i]?.done);
     }).length, 0);
   const pct = totalEx > 0 ? Math.round((doneEx / totalEx) * 100) : 0;
@@ -63,8 +63,9 @@ export function SessionScreen({ weekIdx, sessionIdx, state, updateState, onBack 
                     key={eIdx}
                     exercise={ex}
                     exKey={exerciseKey(weekIdx, sessionIdx, bIdx, eIdx)}
-                    state={state}
-                    updateState={updateState}
+                    sets={sets}
+                    updateSets={updateSets}
+                    soundEnabled={soundEnabled}
                     onStartTimer={startTimer}
                     isPower={isPowerBlock}
                   />
@@ -84,7 +85,7 @@ export function SessionScreen({ weekIdx, sessionIdx, state, updateState, onBack 
             </button>
           </div>
           <div className="py-4">
-            <Timer initialSeconds={timerSec} autostart={true} soundEnabled={state.soundEnabled !== false} />
+            <Timer initialSeconds={timerSec} autostart={true} soundEnabled={soundEnabled} />
           </div>
         </div>
       )}

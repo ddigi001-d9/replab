@@ -4,12 +4,12 @@ import { SetRow } from './SetRow.jsx';
 import { Timer } from './Timer.jsx';
 import { ytSearchUrl } from '../data/program.js';
 
-export function ExerciseCard({ exercise, exKey, state, updateState, onStartTimer, isPower }) {
+export function ExerciseCard({ exercise, exKey, sets, updateSets, soundEnabled, onStartTimer, isPower }) {
   const [expanded, setExpanded] = useState(false);
-  const sets = exercise.sets;
-  const setData = state.sets?.[exKey] || {};
-  const doneCount = Array.from({ length: sets }).filter((_, i) => setData[i]?.done).length;
-  const complete = doneCount === sets;
+  const setCount = exercise.sets;
+  const setData = sets?.[exKey] || {};
+  const doneCount = Array.from({ length: setCount }).filter((_, i) => setData[i]?.done).length;
+  const complete = doneCount === setCount;
 
   return (
     <div className={`rounded-xl ${complete ? 'bg-emerald-950/30 border-emerald-800/50' : 'bg-zinc-900 border-zinc-800'} border transition-colors`}>
@@ -24,7 +24,7 @@ export function ExerciseCard({ exercise, exKey, state, updateState, onStartTimer
             </div>
           ) : (
             <div className={`w-9 h-9 rounded-lg border-2 ${isPower ? 'border-red-500/60' : 'border-zinc-700'} flex items-center justify-center font-mono font-black text-xs ${isPower ? 'text-red-500' : 'text-zinc-500'}`}>
-              {doneCount}/{sets}
+              {doneCount}/{setCount}
             </div>
           )}
         </div>
@@ -63,18 +63,15 @@ export function ExerciseCard({ exercise, exKey, state, updateState, onStartTimer
           </div>
 
           <div className="space-y-1.5">
-            {Array.from({ length: sets }).map((_, i) => (
+            {Array.from({ length: setCount }).map((_, i) => (
               <SetRow
                 key={i}
                 setIdx={i}
-                totalSets={sets}
+                totalSets={setCount}
                 data={setData[i]}
-                onUpdate={(d) => updateState(s => ({
-                  ...s,
-                  sets: {
-                    ...s.sets,
-                    [exKey]: { ...s.sets?.[exKey], [i]: d }
-                  }
+                onUpdate={(d) => updateSets(cur => ({
+                  ...cur,
+                  [exKey]: { ...cur?.[exKey], [i]: d }
                 }))}
               />
             ))}
@@ -83,7 +80,7 @@ export function ExerciseCard({ exercise, exKey, state, updateState, onStartTimer
           {exercise.isInterval ? (
             <div className="bg-zinc-950/60 rounded-lg p-3 border border-zinc-800">
               <div className="text-xs text-zinc-500 mb-2 font-bold tracking-wider">INTERVAL TIMER</div>
-              <Timer initialSeconds={exercise.workSec} soundEnabled={state.soundEnabled !== false} />
+              <Timer initialSeconds={exercise.workSec} soundEnabled={soundEnabled} />
             </div>
           ) : (
             <button

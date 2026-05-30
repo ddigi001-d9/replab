@@ -1,24 +1,26 @@
 import React from 'react';
 import { Play, Check } from 'lucide-react';
-import { PROGRAM, exerciseKey, getCurrentSession } from '../data/program.js';
+import { exerciseKey, getCurrentSession } from '../data/program.js';
+import { PEOPLE } from '../data/program.js';
 
-export function HomeScreen({ state, updateState, onOpenSession }) {
-  const current = getCurrentSession();
+export function HomeScreen({ program, profile, sets, onCycleProfile, onOpenSession }) {
+  const current = getCurrentSession(program);
   const today = new Date();
   const dateStr = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
 
-  const currentWeek = PROGRAM.weeks[current.weekIdx];
+  const currentWeek = program.weeks[current.weekIdx];
   const currentSession = currentWeek.sessions[current.sessionIdx];
+  const person = PEOPLE.find(p => p.name === profile) || PEOPLE[0];
 
   const sessionProgress = (wIdx, sIdx) => {
-    const week = PROGRAM.weeks[wIdx];
+    const week = program.weeks[wIdx];
     const session = week.sessions[sIdx];
     const total = session.blocks.reduce((sum, b) => sum + b.exercises.reduce((s, ex) => s + ex.sets, 0), 0);
     let done = 0;
     session.blocks.forEach((b, bIdx) => {
       b.exercises.forEach((ex, eIdx) => {
         const k = exerciseKey(wIdx, sIdx, bIdx, eIdx);
-        const sd = state.sets?.[k] || {};
+        const sd = sets?.[k] || {};
         Array.from({ length: ex.sets }).forEach((_, i) => { if (sd[i]?.done) done++; });
       });
     });
@@ -39,14 +41,20 @@ export function HomeScreen({ state, updateState, onOpenSession }) {
             </div>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => updateState(s => ({ ...s, profile: s.profile === 'Frank' ? 'D-Rock' : 'Frank' }))}
+                onClick={onCycleProfile}
                 className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-full active:bg-zinc-800"
               >
-                <div className={`w-2 h-2 rounded-full ${state.profile === 'Frank' ? 'bg-red-500' : 'bg-amber-500'}`} />
-                <div className="font-mono text-xs font-bold text-zinc-200">{state.profile || 'D-Rock'}</div>
+                <div className={`w-2 h-2 rounded-full ${person.dot}`} />
+                <div className="font-mono text-xs font-bold text-zinc-200">{person.name}</div>
               </button>
             </div>
           </div>
+
+          {program.note && (
+            <div className="mt-4 text-[11px] leading-snug text-amber-400/90 bg-amber-500/5 border border-amber-500/20 rounded-lg px-3 py-2">
+              {program.note}
+            </div>
+          )}
 
           <div className="mt-5">
             <div className="text-[10px] tracking-[0.2em] text-zinc-500 font-bold mb-1">UP NEXT · TODAY</div>
@@ -67,7 +75,7 @@ export function HomeScreen({ state, updateState, onOpenSession }) {
       </div>
 
       <div className="px-4 mt-2 space-y-5">
-        {PROGRAM.weeks.map((week, wIdx) => (
+        {program.weeks.map((week, wIdx) => (
           <div key={wIdx}>
             <div className="flex items-baseline gap-2 mb-2 px-1">
               <div className="font-black text-xs tracking-[0.2em] text-zinc-200 font-display">

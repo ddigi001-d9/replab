@@ -4,24 +4,67 @@ import { SessionScreen } from './components/SessionScreen.jsx';
 import { StatsScreen } from './components/StatsScreen.jsx';
 import { BottomNav } from './components/BottomNav.jsx';
 import { useLocalStorage } from './hooks/useLocalStorage.js';
+import { PROGRAMS, PEOPLE, programIdForPerson } from './data/program.js';
+
+// Migrate the original single-program state shape into per-program logs.
+// Old: { sets: {...}, profile, soundEnabled }
+// New: { logs: { ramp: { sets }, logan: { sets } }, profile, soundEnabled }
+function migrate(state) {
+  if (state.logs) return state;
+  const legacySets = state.sets || {};
+  const { sets, ...rest } = state;
+  return {
+    ...rest,
+    logs: {
+      ramp: { sets: legacySets },
+      logan: { sets: {} }
+    }
+  };
+}
 
 export default function App() {
   const [view, setView] = useState('home');
   const [openSession, setOpenSession] = useState(null);
-  const [state, setState] = useLocalStorage('replab_state_v1', {
-    sets: {},
+  const [rawState, setState] = useLocalStorage('replab_state_v1', {
+    logs: { ramp: { sets: {} }, logan: { sets: {} } },
     profile: 'D-Rock',
     soundEnabled: true
+  });
+
+  const state = migrate(rawState);
+  const profile = state.profile || 'D-Rock';
+  const programId = programIdForPerson(profile);
+  const program = PROGRAMS[programId];
+  const sets = state.logs?.[programId]?.sets || {};
+
+  // Scoped updater: mutate only the active program's sets.
+  const updateSets = (fn) => setState(prev => {
+    const s = migrate(prev);
+    const cur = s.logs?.[programId]?.sets || {};
+    const next = typeof fn === 'function' ? fn(cur) : fn;
+    return {
+      ...s,
+      logs: { ...s.logs, [programId]: { ...s.logs?.[programId], sets: next } }
+    };
+  });
+
+  const cycleProfile = () => setState(prev => {
+    const s = migrate(prev);
+    const idx = PEOPLE.findIndex(p => p.name === (s.profile || 'D-Rock'));
+    const nextName = PEOPLE[(idx + 1) % PEOPLE.length].name;
+    return { ...s, profile: nextName };
   });
 
   if (openSession) {
     return (
       <div className="max-w-md mx-auto">
         <SessionScreen
+          program={program}
           weekIdx={openSession.weekIdx}
           sessionIdx={openSession.sessionIdx}
-          state={state}
-          updateState={setState}
+          sets={sets}
+          updateSets={updateSets}
+          soundEnabled={state.soundEnabled !== false}
           onBack={() => setOpenSession(null)}
         />
       </div>
@@ -32,12 +75,14 @@ export default function App() {
     <div className="max-w-md mx-auto">
       {view === 'home' && (
         <HomeScreen
-          state={state}
-          updateState={setState}
+          program={program}
+          profile={profile}
+          sets={sets}
+          onCycleProfile={cycleProfile}
           onOpenSession={(w, s) => setOpenSession({ weekIdx: w, sessionIdx: s })}
         />
       )}
-      {view === 'stats' && <StatsScreen state={state} />}
+      {view === 'stats' && <StatsScreen program={program} sets={sets} />}
       <BottomNav view={view} setView={setView} />
     </div>
   );
