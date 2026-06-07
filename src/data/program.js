@@ -457,7 +457,7 @@ export const PROGRAM = {
 export const LOGAN_PROGRAM = {
   id: 'logan',
   name: 'Logan — Hip Rebuild & Return-to-Run',
-  startDate: '2026-06-01',
+  startDate: '2026-06-08',
   note: "Cleared with your doctor/PT first (repaired hip + new meds). Eat enough protein (~0.7–1 g/lb) to hold muscle while on tirzepatide. Sharp hip pain = stop and regress.",
   weeks: [
     {
@@ -466,7 +466,7 @@ export const LOGAN_PROGRAM = {
       blurb: 'Learn the movements. Light loads. Wake the hip up.',
       sessions: [
         {
-          day: 'MON', date: 'Jun 1', theme: 'Lower Strength + Hip Stability',
+          day: 'MON', date: 'Jun 8', theme: 'Lower Strength + Hip Stability',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: 'Get blood to the hip.' },
@@ -494,7 +494,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Jun 2', theme: 'Upper Strength + Core',
+          day: 'TUE', date: 'Jun 9', theme: 'Upper Strength + Core',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike or row easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -518,7 +518,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Jun 4', theme: 'Glutes / Single-Leg + Cardio',
+          day: 'THU', date: 'Jun 11', theme: 'Glutes / Single-Leg + Cardio',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -544,7 +544,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'SAT', date: 'Jun 6', theme: 'Full-Body Strength + Aerobic Base',
+          day: 'SAT', date: 'Jun 13', theme: 'Full-Body Strength + Aerobic Base',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Row or bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -574,7 +574,7 @@ export const LOGAN_PROGRAM = {
       blurb: 'Add a little load. More single-leg. Longer easy cardio.',
       sessions: [
         {
-          day: 'MON', date: 'Jun 8', theme: 'Lower Strength + Hip Stability',
+          day: 'MON', date: 'Jun 15', theme: 'Lower Strength + Hip Stability',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -602,7 +602,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Jun 9', theme: 'Upper Strength + Core',
+          day: 'TUE', date: 'Jun 16', theme: 'Upper Strength + Core',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike or row easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -626,7 +626,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Jun 11', theme: 'Glutes / Single-Leg + Cardio',
+          day: 'THU', date: 'Jun 18', theme: 'Glutes / Single-Leg + Cardio',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -651,7 +651,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'SAT', date: 'Jun 13', theme: 'Full-Body Strength + Aerobic Base',
+          day: 'SAT', date: 'Jun 20', theme: 'Full-Body Strength + Aerobic Base',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Row or bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -681,7 +681,7 @@ export const LOGAN_PROGRAM = {
       blurb: 'Heavier strength. Gentle impact prep to ready the tendons.',
       sessions: [
         {
-          day: 'MON', date: 'Jun 15', theme: 'Lower Strength + Hip Stability',
+          day: 'MON', date: 'Jun 22', theme: 'Lower Strength + Hip Stability',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -708,7 +708,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Jun 16', theme: 'Upper Strength + Core',
+          day: 'TUE', date: 'Jun 23', theme: 'Upper Strength + Core',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike or row easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -732,7 +732,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Jun 18', theme: 'Glutes / Single-Leg + Impact',
+          day: 'THU', date: 'Jun 25', theme: 'Glutes / Single-Leg + Impact',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -757,7 +757,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'SAT', date: 'Jun 20', theme: 'Full-Body Strength + Aerobic Base',
+          day: 'SAT', date: 'Jun 27', theme: 'Full-Body Strength + Aerobic Base',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Row or bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -786,7 +786,7 @@ export const LOGAN_PROGRAM = {
       blurb: 'Pull volume back a touch. Test the hip with walk/run — the milestone.',
       sessions: [
         {
-          day: 'MON', date: 'Jun 22', theme: 'Lower Strength (Maintain) + Hip',
+          day: 'MON', date: 'Jun 29', theme: 'Lower Strength (Maintain) + Hip',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -809,7 +809,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Jun 23', theme: 'Upper Strength + Core',
+          day: 'TUE', date: 'Jun 30', theme: 'Upper Strength + Core',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike or row easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },
@@ -832,7 +832,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Jun 25', theme: 'Walk/Run Test + Glutes',
+          day: 'THU', date: 'Jul 2', theme: 'Walk/Run Test + Glutes',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Brisk walk', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: 'Warm up the legs.' },
@@ -852,7 +852,7 @@ export const LOGAN_PROGRAM = {
           ]
         },
         {
-          day: 'SAT', date: 'Jun 27', theme: 'Full-Body Strength + Recovery Cardio',
+          day: 'SAT', date: 'Jul 4', theme: 'Full-Body Strength + Recovery Cardio',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Row or bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Logan', notes: '' },

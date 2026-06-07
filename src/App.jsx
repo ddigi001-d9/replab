@@ -22,6 +22,22 @@ function migrate(state) {
   };
 }
 
+// One-time wipe of Logan's logged sets for the Jun 8, 2026 program restart.
+// Bump the version to wipe again on every device.
+const LOGAN_RESET_VERSION = 1;
+
+function normalize(state) {
+  let s = migrate(state);
+  if ((s.resets?.logan || 0) < LOGAN_RESET_VERSION) {
+    s = {
+      ...s,
+      logs: { ...s.logs, logan: { ...s.logs?.logan, sets: {} } },
+      resets: { ...s.resets, logan: LOGAN_RESET_VERSION }
+    };
+  }
+  return s;
+}
+
 export default function App() {
   const [view, setView] = useState('home');
   const [openSession, setOpenSession] = useState(null);
@@ -31,7 +47,7 @@ export default function App() {
     soundEnabled: true
   });
 
-  const state = migrate(rawState);
+  const state = normalize(rawState);
   const profile = state.profile || 'D-Rock';
   const programId = programIdForPerson(profile);
   const program = PROGRAMS[programId];
@@ -39,7 +55,7 @@ export default function App() {
 
   // Scoped updater: mutate only the active program's sets.
   const updateSets = (fn) => setState(prev => {
-    const s = migrate(prev);
+    const s = normalize(prev);
     const cur = s.logs?.[programId]?.sets || {};
     const next = typeof fn === 'function' ? fn(cur) : fn;
     return {
@@ -49,7 +65,7 @@ export default function App() {
   });
 
   const cycleProfile = () => setState(prev => {
-    const s = migrate(prev);
+    const s = normalize(prev);
     const idx = PEOPLE.findIndex(p => p.name === (s.profile || 'D-Rock'));
     const nextName = PEOPLE[(idx + 1) % PEOPLE.length].name;
     return { ...s, profile: nextName };
