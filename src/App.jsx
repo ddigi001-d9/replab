@@ -26,6 +26,12 @@ function migrate(state) {
 // Bump the version to wipe again on every device.
 const LOGAN_RESET_VERSION = 1;
 
+// One-time wipe of D-Rock & Frank's ramp log for the Jul 20, 2026 restart.
+// Set keys are positional (week/session/block/exercise index), so old logs
+// from the previous ramp block would otherwise show as checked in the new one.
+// Bump the version to wipe again on every device.
+const RAMP_RESET_VERSION = 1;
+
 function normalize(state) {
   let s = migrate(state);
   if ((s.resets?.logan || 0) < LOGAN_RESET_VERSION) {
@@ -33,6 +39,13 @@ function normalize(state) {
       ...s,
       logs: { ...s.logs, logan: { ...s.logs?.logan, sets: {} } },
       resets: { ...s.resets, logan: LOGAN_RESET_VERSION }
+    };
+  }
+  if ((s.resets?.ramp || 0) < RAMP_RESET_VERSION) {
+    s = {
+      ...s,
+      logs: { ...s.logs, ramp: { ...s.logs?.ramp, sets: {} } },
+      resets: { ...s.resets, ramp: RAMP_RESET_VERSION }
     };
   }
   return s;
