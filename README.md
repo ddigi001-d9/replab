@@ -1,11 +1,11 @@
 # RepLab
 
-Training console for D-Rock & Frank's 4-week ramp. Phone-first PWA. Installable to home screen, works offline, no app store.
+Training console for D-Rock & Frank's 4-week explosive-mass block (3 days/week). Phone-first PWA. Installable to home screen, works offline, no app store.
 
 ## What's in here
 
 - **`src/`** — React app (Vite). Components, hooks, program data.
-- **`src/data/program.js`** — the full 4-week program. Edit this file to change exercises, sets, reps, or extend with new weeks.
+- **`src/data/program.js`** — the full program (D-Rock & Frank + Logan). Edit this file to change exercises, sets, reps, or extend with new weeks.
 - **`public/`** — static assets (icons, favicon).
 - **`.github/workflows/deploy.yml`** — auto-deploys to GitHub Pages on every push to `main`.
 
