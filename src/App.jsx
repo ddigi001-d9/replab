@@ -30,7 +30,8 @@ const LOGAN_RESET_VERSION = 1;
 // Set keys are positional (week/session/block/exercise index), so old logs
 // from the previous ramp block would otherwise show as checked in the new one.
 // Bump the version to wipe again on every device.
-const RAMP_RESET_VERSION = 1;
+// v2: Jul 20, 2026 restructure into the 20-min Power/BJJ split.
+const RAMP_RESET_VERSION = 2;
 
 function normalize(state) {
   let s = migrate(state);

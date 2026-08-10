@@ -5,110 +5,87 @@
 
 export const PROGRAM = {
   id: 'ramp',
-  name: 'D-Rock & Frank — Explosive Mass Block',
+  name: 'D-Rock & Frank — 20-Min Power & BJJ',
   startDate: '2026-07-20',
-  note: "Frank: to add mass you have to eat for it — hit protein (~0.7–1 g/lb bodyweight) and a small calorie surplus every day, especially on lifting days. Sleep 9+ hrs. The trap bar and DB work builds the muscle; the jumps and throws keep you explosive. Train hard, recover harder.",
+  note: "20-min sessions. Mon/Thu build power & mass; Tue/Fri learn BJJ (watch the demo, then drill it). Frank plays libero — volleyball M–F, 90 min — so keep the lifts short and crisp, eat for mass (protein + slight surplus, sleep 9+), and treat BJJ days as skill work + active recovery. Tap 'Watch' on a BJJ move to pull up a demo video.",
   weeks: [
     {
       num: 1,
-      label: 'BASE',
-      blurb: '3 days now. The trap bar is in. Groove the movements, feed the muscle, set baselines.',
+      label: 'FUNDAMENTALS',
+      blurb: '20-min sessions. Lift Mon/Thu, learn BJJ Tue/Fri. Groove the movements, set baselines.',
       sessions: [
         {
-          day: 'MON', date: 'Jul 20', theme: 'Lower Power + Trap Bar Strength',
+          day: 'MON', date: 'Jul 20', theme: 'Power & Mass — Lower',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Both', notes: 'Get warm.' },
-              { name: "World's greatest stretch", sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: 'Open hips.' },
-              { name: 'A-skips + B-skips', sets: 2, reps: '20 yd', tempo: '—', load: 'BW', who: 'Both', notes: 'Knees high, tall posture.' },
-              { name: 'Pogo hops', sets: 2, reps: '20', tempo: '—', load: 'BW', who: 'Both', notes: 'Stiff ankles, quick ground contact.' }
+              { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: 'Raise the heart rate, open hips + shoulders. Keep it moving — 20-min cap.' }
             ]},
-            { name: 'Frank — Power & Speed', exercises: [
-              { name: 'Trap bar jump', sets: 4, reps: '3', tempo: '—', load: 'Light (bar or +10)', who: 'Frank', notes: 'Jump for height. Full triple extension, soft landing.', track: true },
-              { name: 'Broad jump', sets: 3, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'Max distance, full reset between.', track: true },
-              { name: '10-yd sprint start', sets: 5, reps: '1', tempo: '—', load: 'BW', who: 'Frank', notes: 'Tread or outdoors. 3-point stance, walk back.' }
+            { name: 'Frank — Power', exercises: [
+              { name: 'Trap bar jump', sets: 4, reps: '3', tempo: '—', load: 'Light-mod', who: 'Frank', notes: 'Explosive triple extension, soft landing. Full reset between reps.', track: true }
             ]},
-            { name: 'Shared Lift — Lower', exercises: [
-              { name: 'Trap bar deadlift', sets: 4, reps: '8', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Push the floor away, flat back. RIR 2–3.', track: true },
-              { name: 'DB RDL', sets: 3, reps: '10', tempo: '3-0-1-0', load: 'Moderate', who: 'Both', notes: 'Hinge, feel the hamstrings.', track: true },
-              { name: 'DB reverse lunge', sets: 3, reps: '10/leg', tempo: 'ctrl', load: 'Moderate', who: 'Both', notes: 'Tall torso, control the step back.', track: true },
-              { name: 'Single-leg calf iso-hold', sets: 3, reps: '30s/leg', tempo: 'iso', load: 'BW', who: 'Both', notes: 'Tendon work.' }
+            { name: 'Strength Superset A', exercises: [
+              { name: 'Trap bar deadlift', sets: 4, reps: '6', tempo: '2-1-1-0', load: 'Moderate-heavy', who: 'Both', notes: 'Superset with the row — go back-to-back, short rest. RIR 2.', track: true },
+              { name: 'Single-arm DB row', sets: 4, reps: '8/side', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Straight into it after the deadlift.', track: true }
             ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Peloton bike intervals', sets: 6, reps: '30s on / 90s off', tempo: '—', load: 'Hard', who: 'D-Rock', notes: 'Z4–Z5 effort.', isInterval: true, workSec: 30, restSec: 90 }
-            ]},
-            { name: 'Shared Core', exercises: [
-              { name: 'Pallof press', sets: 3, reps: '10/side', tempo: '2s hold', load: 'Band', who: 'Both', notes: 'Anti-rotation.' },
-              { name: 'Dead bug', sets: 3, reps: '8/side', tempo: 'slow', load: 'BW', who: 'Both', notes: 'Ribs down.' },
-              { name: 'Side plank', sets: 3, reps: '30s/side', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
-            ]},
-            { name: 'Cooldown', exercises: [
-              { name: 'Couch stretch', sets: 2, reps: '45s/side', tempo: '—', load: '—', who: 'Both', notes: '' },
-              { name: '90/90 hip switches', sets: 2, reps: '8/side', tempo: '—', load: '—', who: 'Both', notes: '' }
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB bench press', sets: 3, reps: '8', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Superset with the squat. Full stretch at the bottom.', track: true },
+              { name: 'Goblet squat', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Short rest — beat the clock.', track: true }
             ]}
           ]
         },
         {
-          day: 'WED', date: 'Jul 22', theme: 'Upper Mass + Rotational Power',
+          day: 'TUE', date: 'Jul 21', theme: 'BJJ — Movement & Escapes',
+          blocks: [
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp (hip escape)', sets: 2, reps: '20 yd', tempo: '—', load: 'BW', who: 'Both', notes: 'Drive off the foot, slide the hips out. The most important movement in BJJ.' },
+              { name: 'Bridge + technical stand-up', sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: 'Base and posture fundamentals.' }
+            ]},
+            { name: 'Learn', exercises: [
+              { name: 'Watch: BJJ fundamentals — posture, base & frames', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Watch first, then drill what you saw. Talk through it together.', video: 'bjj fundamentals posture base and frames for beginners' }
+            ]},
+            { name: 'Drill', exercises: [
+              { name: 'Drill: hip escape to guard recovery', sets: 3, reps: '6/side', tempo: 'slow', load: '—', who: 'Both', notes: 'Slow, correct reps beat fast sloppy ones.', track: true }
+            ]},
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: escape the mount (bottom)', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Start pinned under mount, work to escape. Reset each round. Tap early, tap often.', isInterval: true, workSec: 180, restSec: 60 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Jul 23', theme: 'Power & Mass — Upper',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike or tread easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: 'Band pull-aparts', sets: 2, reps: '15', tempo: '—', load: 'Light', who: 'Both', notes: '' },
-              { name: 'Shoulder CARs', sets: 2, reps: '5/side', tempo: 'slow', load: 'BW', who: 'Both', notes: '' },
-              { name: 'T-spine open book', sets: 2, reps: '6/side', tempo: '—', load: 'BW', who: 'Both', notes: '' }
+              { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: 'Warm the shoulders and mid-back.' }
             ]},
             { name: 'Frank — Rotational Power', exercises: [
-              { name: 'Med ball rotational throw', sets: 4, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Hips lead, full follow-through.' },
-              { name: 'Med ball overhead slam', sets: 3, reps: '6', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Max effort every rep.' },
-              { name: 'Med ball chest pass', sets: 3, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Explosive push off the chest.' }
+              { name: 'Med ball overhead slam', sets: 4, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Whole body into it, max effort each rep.' },
+              { name: 'Med ball rotational throw', sets: 3, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Hips lead — great transfer to volleyball passing + hitting.' }
             ]},
-            { name: 'Shared Push — Mass', exercises: [
-              { name: 'DB bench press', sets: 4, reps: '10', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Full stretch at the bottom, RIR 2.', track: true },
-              { name: 'DB incline press', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Upper chest.', track: true },
-              { name: 'Seated DB shoulder press', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'No back arch.', track: true }
+            { name: 'Strength Superset A', exercises: [
+              { name: 'DB bench press', sets: 4, reps: '8', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Superset with the row, short rest. RIR 2.', track: true },
+              { name: 'Bent-over barbell row', sets: 4, reps: '8', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Olympic bar, flat back, pull to the belly.', track: true }
             ]},
-            { name: 'Shared Pull — Mass', exercises: [
-              { name: 'Single-arm DB row', sets: 4, reps: '10/side', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Full pull, squeeze the back.', track: true },
-              { name: 'Bent-over barbell row', sets: 3, reps: '10', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Olympic bar, flat back, pull to belly.', track: true },
-              { name: 'Band face pull', sets: 3, reps: '15', tempo: '2s hold', load: 'Band', who: 'Both', notes: 'Rear delt + posture.' }
-            ]},
-            { name: 'Arms & Core', exercises: [
-              { name: 'DB curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Frank — grow the guns. Slow negatives, no swing.', track: true },
-              { name: 'DB overhead triceps extension', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Full stretch overhead.', track: true },
-              { name: 'Plank', sets: 3, reps: '40s', tempo: 'iso', load: 'BW', who: 'Both', notes: 'Ribs down, glutes tight.' }
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB reverse lunge', sets: 3, reps: '8/leg', tempo: 'ctrl', load: 'Moderate', who: 'Both', notes: 'Superset with the curl.', track: true },
+              { name: 'DB curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: 'Grow the guns. Slow negatives, no swing.', track: true }
             ]}
           ]
         },
         {
-          day: 'FRI', date: 'Jul 24', theme: 'Total-Body Power + Strength',
+          day: 'FRI', date: 'Jul 24', theme: 'BJJ — Closed Guard',
           blocks: [
-            { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: "World's greatest stretch", sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Pogo hops', sets: 2, reps: '20', tempo: '—', load: 'BW', who: 'Both', notes: 'Ankle prep.' },
-              { name: 'Band pull-aparts', sets: 2, reps: '15', tempo: '—', load: 'Light', who: 'Both', notes: '' }
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: 'Prime the hips.' },
+              { name: 'Technical stand-up', sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Explosive', exercises: [
-              { name: 'Broad jump', sets: 3, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'Max distance, stick the landing.', track: true },
-              { name: 'Lateral bound + stick', sets: 3, reps: '4/side', tempo: '—', load: 'BW', who: 'Frank', notes: 'Stick 2s, no wobble.' },
-              { name: 'Med ball overhead slam', sets: 3, reps: '6', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Whole body into it.' }
+            { name: 'Learn', exercises: [
+              { name: 'Watch: closed guard — posture control & breaking grips', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'How to hold someone in closed guard and break their posture.', video: 'closed guard basics posture control breaking grips beginner bjj' }
             ]},
-            { name: 'Shared Lift — Full Body', exercises: [
-              { name: 'Goblet squat', sets: 4, reps: '10', tempo: '3-1-1-0', load: 'Moderate', who: 'Both', notes: 'Knees track toes, sit deep.', track: true },
-              { name: 'Floor press', sets: 3, reps: '8', tempo: '2-1-1-0', load: 'Moderate', who: 'Both', notes: 'Olympic bar or DBs. Pause on the floor.', track: true },
-              { name: 'Trap bar farmer carry', sets: 3, reps: '40 yd', tempo: '—', load: 'Heavy', who: 'Both', notes: 'Grip + traps. Tall posture, no lean.', track: true },
-              { name: 'Single-arm DB row', sets: 3, reps: '10/side', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true }
+            { name: 'Drill', exercises: [
+              { name: 'Drill: closed guard maintenance & posture break', sets: 3, reps: '5/side', tempo: 'slow', load: '—', who: 'Both', notes: 'Feet crossed, break the posture, recover if they stand.', track: true }
             ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Rower intervals', sets: 5, reps: '1 min on / 1 off', tempo: '—', load: 'Hard', who: 'D-Rock', notes: 'Z4.', isInterval: true, workSec: 60, restSec: 60 }
-            ]},
-            { name: 'Anti-Rotation & Core', exercises: [
-              { name: 'Suitcase carry', sets: 3, reps: '30 yd/side', tempo: '—', load: 'Mod-heavy DB', who: 'Both', notes: "Don't lean toward the weight.", track: true },
-              { name: 'Bird dog', sets: 3, reps: '8/side', tempo: '3s hold', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Hollow hold', sets: 3, reps: '20s', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
-            ]},
-            { name: 'Finisher', exercises: [
-              { name: 'Bike or row sprints', sets: 5, reps: '20s all-out / 40s easy', tempo: '—', load: 'All-out', who: 'Both', notes: 'Compete.', isInterval: true, workSec: 20, restSec: 40 }
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: keep / recover closed guard', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Bottom keeps guard closed; top tries to open and pass. Switch each round.', isInterval: true, workSec: 180, restSec: 60 }
             ]}
           ]
         }
@@ -116,98 +93,81 @@ export const PROGRAM = {
     },
     {
       num: 2,
-      label: 'INTENSIFY',
-      blurb: 'Add load. Reps hold, intent climbs. Beat Week 1 on the trap bar and the jumps.',
+      label: 'GUARD & SWEEPS',
+      blurb: 'Add load on the lifts. On the mat, start turning defense into sweeps.',
       sessions: [
         {
-          day: 'MON', date: 'Jul 27', theme: 'Lower Power + Trap Bar Strength',
+          day: 'MON', date: 'Jul 27', theme: 'Power & Mass — Lower',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: "World's greatest stretch", sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'A-skips + B-skips', sets: 2, reps: '20 yd', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Pogo + single-leg pogo', sets: 2, reps: '20 + 10/leg', tempo: '—', load: 'BW', who: 'Both', notes: '' }
+              { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Power & Speed', exercises: [
-              { name: 'Trap bar jump', sets: 5, reps: '3', tempo: '—', load: 'Light-mod', who: 'Frank', notes: 'A touch heavier than Wk1, still fast off the floor.', track: true },
-              { name: 'Broad jump', sets: 4, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'Beat Wk1 distance.', track: true },
-              { name: '10-yd flying sprint', sets: 5, reps: '1', tempo: '—', load: 'BW', who: 'Frank', notes: 'Build up, then sprint through.' }
+            { name: 'Frank — Power', exercises: [
+              { name: 'Trap bar jump', sets: 5, reps: '3', tempo: '—', load: 'Light-mod', who: 'Frank', notes: 'A touch heavier than Wk1, still fast off the floor.', track: true }
             ]},
-            { name: 'Shared Lift — Lower', exercises: [
-              { name: 'Trap bar deadlift', sets: 4, reps: '8', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: 'Beat Wk1 load. RIR 2.', track: true },
-              { name: 'DB RDL', sets: 3, reps: '10', tempo: '3-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'DB reverse lunge', sets: 3, reps: '10/leg', tempo: 'ctrl', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Single-leg calf raise', sets: 3, reps: '12/leg', tempo: '3-0-1-0', load: 'DB held', who: 'Both', notes: 'Tendon.' }
+            { name: 'Strength Superset A', exercises: [
+              { name: 'Trap bar deadlift', sets: 4, reps: '6', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: 'Beat Wk1 load. Superset with the row.', track: true },
+              { name: 'Single-arm DB row', sets: 4, reps: '10/side', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true }
             ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Peloton bike intervals', sets: 8, reps: '30s on / 90s off', tempo: '—', load: 'Hard', who: 'D-Rock', notes: '+2 rounds vs Wk1.', isInterval: true, workSec: 30, restSec: 90 }
-            ]},
-            { name: 'Shared Core', exercises: [
-              { name: 'Pallof press + hold', sets: 3, reps: '10/side', tempo: 'iso', load: 'Band', who: 'Both', notes: '' },
-              { name: 'Weighted dead bug', sets: 3, reps: '8/side', tempo: 'slow', load: 'Light DB', who: 'Both', notes: '' },
-              { name: 'Side plank w/ reach', sets: 3, reps: '30s/side', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB bench press', sets: 3, reps: '8', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: 'Superset with the squat.', track: true },
+              { name: 'Goblet squat', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true }
             ]}
           ]
         },
         {
-          day: 'WED', date: 'Jul 29', theme: 'Upper Mass + Rotational Power',
+          day: 'TUE', date: 'Jul 28', theme: 'BJJ — Scissor Sweep',
+          blocks: [
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + technical stand-up', sets: 2, reps: '20 yd / 5 ea', tempo: '—', load: 'BW', who: 'Both', notes: '' },
+              { name: 'Guard sit-outs', sets: 2, reps: '8/side', tempo: '—', load: 'BW', who: 'Both', notes: 'Hip mobility for sweeps.' }
+            ]},
+            { name: 'Learn', exercises: [
+              { name: 'Watch: scissor sweep from closed guard', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Off-balance, then chop the legs like scissors.', video: 'scissor sweep from closed guard step by step bjj' }
+            ]},
+            { name: 'Drill', exercises: [
+              { name: 'Drill: scissor sweep', sets: 3, reps: '5/side', tempo: 'ctrl', load: '—', who: 'Both', notes: 'Grip, angle, sweep, come up on top.', track: true }
+            ]},
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: sweep from guard', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Bottom tries to sweep and come up; top tries to pass. Switch each round.', isInterval: true, workSec: 180, restSec: 60 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Jul 30', theme: 'Power & Mass — Upper',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike or tread easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: 'Band Y-T-W + pull-aparts', sets: 2, reps: '10', tempo: '—', load: 'Light', who: 'Both', notes: '' },
-              { name: 'Shoulder CARs + open book', sets: 2, reps: '5–6', tempo: 'slow', load: 'BW', who: 'Both', notes: '' }
+              { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
             ]},
             { name: 'Frank — Rotational Power', exercises: [
-              { name: 'Med ball rotational throw', sets: 5, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Max velocity, hips drive it.' },
-              { name: 'Med ball overhead slam', sets: 4, reps: '6', tempo: '—', load: '10 lb', who: 'Frank', notes: '' },
-              { name: 'Med ball shotput throw', sets: 3, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Hitting transfer — drive off the back leg.' }
+              { name: 'Med ball overhead slam', sets: 5, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Max effort.' },
+              { name: 'Med ball rotational throw', sets: 3, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: '' }
             ]},
-            { name: 'Shared Push — Mass', exercises: [
-              { name: 'DB bench press', sets: 4, reps: '10', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: 'Beat Wk1. RIR 2.', track: true },
-              { name: 'DB incline press', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Seated DB shoulder press', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true }
+            { name: 'Strength Superset A', exercises: [
+              { name: 'DB bench press', sets: 4, reps: '8', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: 'Beat Wk1. Superset with the row.', track: true },
+              { name: 'Bent-over barbell row', sets: 4, reps: '8', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: '', track: true }
             ]},
-            { name: 'Shared Pull — Mass', exercises: [
-              { name: 'Single-arm DB row', sets: 4, reps: '10/side', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Bent-over barbell row', sets: 3, reps: '10', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Band face pull', sets: 3, reps: '15', tempo: '2s hold', load: 'Band', who: 'Both', notes: '' }
-            ]},
-            { name: 'Arms & Core', exercises: [
-              { name: 'DB curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: 'Slow negatives.', track: true },
-              { name: 'DB overhead triceps extension', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Plank', sets: 3, reps: '45s', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB reverse lunge', sets: 3, reps: '8/leg', tempo: 'ctrl', load: 'Heavier', who: 'Both', notes: '', track: true },
+              { name: 'DB curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true }
             ]}
           ]
         },
         {
-          day: 'FRI', date: 'Jul 31', theme: 'Total-Body Power + Strength',
+          day: 'FRI', date: 'Jul 31', theme: 'BJJ — Hip Bump & Kimura',
           blocks: [
-            { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: "World's greatest stretch", sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Pogo + skips', sets: 2, reps: '20 + 20 yd', tempo: '—', load: 'BW', who: 'Both', notes: '' }
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: '' },
+              { name: 'Technical stand-up', sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Explosive', exercises: [
-              { name: 'Broad jump', sets: 4, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'Beat Wk1.', track: true },
-              { name: 'Lateral bound + stick', sets: 3, reps: '4/side', tempo: '—', load: 'BW', who: 'Frank', notes: '' },
-              { name: 'Med ball overhead slam', sets: 3, reps: '8', tempo: '—', load: '10 lb', who: 'Frank', notes: 'More reps, same intent.' }
+            { name: 'Learn', exercises: [
+              { name: 'Watch: hip bump sweep + kimura from guard', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Two attacks off the same setup — when one fails, hit the other.', video: 'hip bump sweep and kimura from closed guard bjj' }
             ]},
-            { name: 'Shared Lift — Full Body', exercises: [
-              { name: 'Goblet squat', sets: 4, reps: '10', tempo: '3-1-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Floor press', sets: 3, reps: '8', tempo: '2-1-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Trap bar farmer carry', sets: 3, reps: '40 yd', tempo: '—', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Single-arm DB row', sets: 3, reps: '10/side', tempo: '2-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true }
+            { name: 'Drill', exercises: [
+              { name: 'Drill: hip bump → kimura chain', sets: 3, reps: '5/side', tempo: 'ctrl', load: '—', who: 'Both', notes: 'Sit up, bump; if they post, take the kimura grip.', track: true }
             ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Rower intervals', sets: 6, reps: '1 min on / 1 off', tempo: '—', load: 'Hard', who: 'D-Rock', notes: '', isInterval: true, workSec: 60, restSec: 60 }
-            ]},
-            { name: 'Anti-Rotation & Core', exercises: [
-              { name: 'Suitcase carry', sets: 3, reps: '40 yd/side', tempo: '—', load: 'Heavier', who: 'Both', notes: '', track: true },
-              { name: 'Bird dog w/ reach', sets: 3, reps: '8/side', tempo: '3s hold', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Hollow hold', sets: 3, reps: '25s', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
-            ]},
-            { name: 'Finisher', exercises: [
-              { name: 'Bike or row sprints', sets: 6, reps: '20s all-out / 40s easy', tempo: '—', load: 'All-out', who: 'Both', notes: 'Compete. +1 round.', isInterval: true, workSec: 20, restSec: 40 }
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: submit or sweep from guard', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Bottom hunts sweep or submission. Switch each round.', isInterval: true, workSec: 180, restSec: 60 }
             ]}
           ]
         }
@@ -215,98 +175,81 @@ export const PROGRAM = {
     },
     {
       num: 3,
-      label: 'PEAK',
-      blurb: 'Heaviest loads, most power. PRs land here. Eat big, lift hard, jump far.',
+      label: 'PASS & PIN',
+      blurb: 'Heaviest lifts of the block — power & mass peak. On the mat, get on top and pass.',
       sessions: [
         {
-          day: 'MON', date: 'Aug 3', theme: 'Lower Power + Trap Bar Strength',
+          day: 'MON', date: 'Aug 3', theme: 'Power & Mass — Lower',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: "World's greatest stretch", sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'A/B-skips + fast leg', sets: 2, reps: '20 yd', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Pogo + depth drop', sets: 2, reps: '20 + 5', tempo: '—', load: 'BW', who: 'Both', notes: 'Soft land.' }
+              { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Power PEAK', exercises: [
-              { name: 'Trap bar jump', sets: 5, reps: '3', tempo: '—', load: 'Moderate', who: 'Frank', notes: 'PR intent — jump tall, stay explosive.', track: true },
-              { name: 'Broad jump', sets: 5, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'PR attempt.', track: true },
-              { name: 'Flying 10-yd sprint (timed)', sets: 4, reps: '1', tempo: '—', load: 'BW', who: 'Frank', notes: 'Time it, record best.', track: true }
+            { name: 'Frank — Power', exercises: [
+              { name: 'Trap bar jump', sets: 5, reps: '3', tempo: '—', load: 'Moderate', who: 'Frank', notes: 'PR intent — jump tall, stay explosive.', track: true }
             ]},
-            { name: 'Shared Lift — Lower', exercises: [
-              { name: 'Trap bar deadlift', sets: 5, reps: '5', tempo: '2-1-1-0', load: 'Top set heavy', who: 'Both', notes: 'Strength peak. Frank RIR 3 / DR RIR 2.', track: true },
-              { name: 'DB RDL', sets: 3, reps: '8', tempo: '3-0-1-0', load: 'Heavier', who: 'Both', notes: '', track: true },
+            { name: 'Strength Superset A', exercises: [
+              { name: 'Trap bar deadlift', sets: 5, reps: '5', tempo: '2-1-1-0', load: 'Top set heavy', who: 'Both', notes: 'Strength peak. Frank RIR 3 / D-Rock RIR 2. Superset with the row.', track: true },
+              { name: 'Single-arm DB row', sets: 4, reps: '8/side', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: 'Pause at the top.', track: true }
+            ]},
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB bench press', sets: 4, reps: '6', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: 'Superset with the squat. RIR 2.', track: true },
+              { name: 'Goblet squat', sets: 4, reps: '8', tempo: '2-0-1-0', load: 'Heavy', who: 'Both', notes: '', track: true }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Aug 4', theme: 'BJJ — Knee-Cut Pass',
+          blocks: [
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + technical stand-up', sets: 2, reps: '20 yd / 5 ea', tempo: '—', load: 'BW', who: 'Both', notes: '' },
+              { name: 'Leg pummel / knee slides', sets: 2, reps: '8/side', tempo: '—', load: 'BW', who: 'Both', notes: 'Passing footwork.' }
+            ]},
+            { name: 'Learn', exercises: [
+              { name: 'Watch: knee-cut guard pass', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Slice the knee across, pin the head, land in side control.', video: 'knee cut guard pass step by step bjj' }
+            ]},
+            { name: 'Drill', exercises: [
+              { name: 'Drill: knee-cut pass to side control', sets: 3, reps: '5/side', tempo: 'ctrl', load: '—', who: 'Both', notes: 'Underhook, kill the leg, cut through.', track: true }
+            ]},
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: pass the guard', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Top tries to pass to side control; bottom retains. Switch each round.', isInterval: true, workSec: 180, restSec: 60 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Aug 6', theme: 'Power & Mass — Upper',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
+            ]},
+            { name: 'Frank — Rotational Power', exercises: [
+              { name: 'Med ball overhead slam', sets: 5, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Peak power — fast and violent.' },
+              { name: 'Med ball rotational throw', sets: 4, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: '' }
+            ]},
+            { name: 'Strength Superset A', exercises: [
+              { name: 'Floor press', sets: 5, reps: '5', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: 'Olympic bar or DBs. Pause on the floor. Superset with the row.', track: true },
+              { name: 'Bent-over barbell row', sets: 4, reps: '6', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: '', track: true }
+            ]},
+            { name: 'Strength Superset B', exercises: [
               { name: 'DB walking lunge', sets: 3, reps: '10/leg', tempo: 'ctrl', load: 'Moderate', who: 'Both', notes: '', track: true },
-              { name: 'Single-leg calf raise (slow ecc)', sets: 4, reps: '8/leg', tempo: '4-0-1-0', load: 'DB held', who: 'Both', notes: 'Tendon.' }
-            ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Peloton bike intervals', sets: 8, reps: '40s on / 80s off', tempo: '—', load: 'Hard', who: 'D-Rock', notes: 'Density up.', isInterval: true, workSec: 40, restSec: 80 }
-            ]},
-            { name: 'Shared Core', exercises: [
-              { name: 'Pallof press + chop', sets: 3, reps: '8/side', tempo: '2s hold', load: 'Band', who: 'Both', notes: '' },
-              { name: 'Weighted dead bug', sets: 3, reps: '8/side', tempo: 'slow', load: 'DB', who: 'Both', notes: '' },
-              { name: 'Copenhagen plank (assisted)', sets: 3, reps: '20s/side', tempo: 'iso', load: 'BW', who: 'Both', notes: 'Adductor armor.' }
+              { name: 'DB curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Heavy', who: 'Both', notes: 'Last set to failure.', track: true }
             ]}
           ]
         },
         {
-          day: 'WED', date: 'Aug 5', theme: 'Upper Mass + Rotational PEAK',
+          day: 'FRI', date: 'Aug 7', theme: 'BJJ — Side Control Escapes',
           blocks: [
-            { name: 'Warmup', exercises: [
-              { name: 'Bike or tread easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: 'Band Y-T-W-A', sets: 2, reps: '8 each', tempo: '—', load: 'Light', who: 'Both', notes: '' },
-              { name: 'Shoulder CARs + open book', sets: 2, reps: '5–6', tempo: 'slow', load: 'BW', who: 'Both', notes: '' }
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: '' },
+              { name: 'Framing drill', sets: 2, reps: '8/side', tempo: '—', load: 'BW', who: 'Both', notes: 'Strong frames = escapes.' }
             ]},
-            { name: 'Frank — Rotational PEAK', exercises: [
-              { name: 'Med ball rotational throw', sets: 5, reps: '5/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Max velocity — move your only ball as fast as you can.' },
-              { name: 'Med ball overhead slam', sets: 4, reps: '6', tempo: '—', load: '10 lb', who: 'Frank', notes: '' },
-              { name: 'Step-back rotational throw', sets: 4, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Hitting load transfer.' },
-              { name: 'Med ball chest pass', sets: 3, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Explosive.' }
+            { name: 'Learn', exercises: [
+              { name: 'Watch: escaping side control (frames & recover guard)', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Frame, shrimp, recover guard or get to knees.', video: 'how to escape side control frames recover guard bjj' }
             ]},
-            { name: 'Shared Push — Mass', exercises: [
-              { name: 'DB bench press', sets: 5, reps: '8', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: 'RIR 2.', track: true },
-              { name: 'DB incline press', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Heavy', who: 'Both', notes: '', track: true },
-              { name: 'Seated DB shoulder press', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Heavy', who: 'Both', notes: '', track: true }
+            { name: 'Drill', exercises: [
+              { name: 'Drill: side control escape to guard', sets: 3, reps: '5/side', tempo: 'ctrl', load: '—', who: 'Both', notes: '', track: true }
             ]},
-            { name: 'Shared Pull — Mass', exercises: [
-              { name: 'Single-arm DB row', sets: 4, reps: '8/side', tempo: '2-1-1-1', load: 'Heavy', who: 'Both', notes: 'Pause at the top.', track: true },
-              { name: 'Bent-over barbell row', sets: 3, reps: '8', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: '', track: true },
-              { name: 'Band face pull', sets: 3, reps: '15', tempo: '2s hold', load: 'Band', who: 'Both', notes: '' }
-            ]},
-            { name: 'Arms', exercises: [
-              { name: 'DB curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Heavy', who: 'Both', notes: 'Last set to failure.', track: true },
-              { name: 'DB overhead triceps extension', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Heavy', who: 'Both', notes: '', track: true }
-            ]}
-          ]
-        },
-        {
-          day: 'FRI', date: 'Aug 7', theme: 'Total-Body Power + Strength',
-          blocks: [
-            { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: "World's greatest stretch", sets: 2, reps: '5/side', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Pogo + bounds', sets: 2, reps: '20 + 4/side', tempo: '—', load: 'BW', who: 'Both', notes: '' }
-            ]},
-            { name: 'Frank — Explosive PEAK', exercises: [
-              { name: 'Trap bar jump', sets: 5, reps: '3', tempo: '—', load: 'Moderate', who: 'Frank', notes: 'PR intent.', track: true },
-              { name: 'Lateral bound for distance', sets: 3, reps: '4/side', tempo: '—', load: 'BW', who: 'Frank', notes: 'Measure it.', track: true },
-              { name: 'Med ball overhead slam', sets: 4, reps: '6', tempo: '—', load: '10 lb', who: 'Frank', notes: '' }
-            ]},
-            { name: 'Shared Lift — Full Body', exercises: [
-              { name: 'Goblet or front-rack squat', sets: 5, reps: '8', tempo: '3-1-1-0', load: 'Top set heavy', who: 'Both', notes: 'RIR 2.', track: true },
-              { name: 'Floor press', sets: 4, reps: '6', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: '', track: true },
-              { name: 'Trap bar farmer carry', sets: 3, reps: '50 yd', tempo: '—', load: 'Heavy', who: 'Both', notes: 'Longest carry of the block.', track: true },
-              { name: 'Single-arm DB row', sets: 3, reps: '8/side', tempo: '2-1-1-0', load: 'Heavy', who: 'Both', notes: '', track: true }
-            ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Rower or tread intervals', sets: 6, reps: '1 min on / 90s off', tempo: '—', load: 'Very hard', who: 'D-Rock', notes: '', isInterval: true, workSec: 60, restSec: 90 }
-            ]},
-            { name: 'Anti-Rotation & Core', exercises: [
-              { name: 'Suitcase carry', sets: 3, reps: '40 yd/side', tempo: '—', load: 'Heavy DB', who: 'Both', notes: 'Tall posture.', track: true },
-              { name: 'Bird dog w/ band', sets: 3, reps: '8/side', tempo: '3s hold', load: 'Band', who: 'Both', notes: '' },
-              { name: 'Hollow hold', sets: 3, reps: '30s', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
-            ]},
-            { name: 'Finisher', exercises: [
-              { name: 'Bike or row sprints', sets: 8, reps: '20s all-out / 40s easy', tempo: '—', load: 'All-out', who: 'Both', notes: 'Compete. Empty the tank.', isInterval: true, workSec: 20, restSec: 40 }
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: escape side control', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Start pinned, work to escape; top tries to hold and advance. Switch each round.', isInterval: true, workSec: 180, restSec: 60 }
             ]}
           ]
         }
@@ -314,87 +257,79 @@ export const PROGRAM = {
     },
     {
       num: 4,
-      label: 'DELOAD',
-      blurb: 'Pull volume back, keep the snap. Recharge — then re-up heavier next block.',
+      label: 'FLOW & DELOAD',
+      blurb: 'Pull the lifts back to recharge — keep the snap. On the mat, tie it together and flow.',
       sessions: [
         {
-          day: 'MON', date: 'Aug 10', theme: 'Lower Power + Strength (Deload)',
+          day: 'MON', date: 'Aug 10', theme: 'Power & Mass — Lower (Deload)',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '5 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: 'Dynamic mobility flow', sets: 2, reps: '5 min', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'A-skips + pogos', sets: 2, reps: '20 yd + 20', tempo: '—', load: 'BW', who: 'Both', notes: '' }
+              { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Power Maintain', exercises: [
-              { name: 'Trap bar jump', sets: 3, reps: '3', tempo: '—', load: 'Light', who: 'Frank', notes: 'Quality over volume — feel snappy, not maxed.' },
-              { name: 'Broad jump', sets: 3, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'Crisp reps.' },
-              { name: '10-yd sprint', sets: 3, reps: '1', tempo: '—', load: 'BW', who: 'Frank', notes: '' }
+            { name: 'Frank — Power', exercises: [
+              { name: 'Trap bar jump', sets: 3, reps: '3', tempo: '—', load: 'Light', who: 'Frank', notes: 'Quality over volume — feel snappy, not maxed.' }
             ]},
-            { name: 'Shared Lift — Lower', exercises: [
-              { name: 'Trap bar deadlift', sets: 3, reps: '6', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: 'RIR 4 — easy, move fast.', track: true },
-              { name: 'DB RDL', sets: 2, reps: '8', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: '', track: true },
-              { name: 'DB reverse lunge', sets: 2, reps: '8/leg', tempo: 'ctrl', load: 'Light DB', who: 'Both', notes: '', track: true },
-              { name: 'Calf iso-hold', sets: 3, reps: '30s/leg', tempo: 'iso', load: 'BW', who: 'Both', notes: 'Keep tendon stim.' }
+            { name: 'Strength Superset A', exercises: [
+              { name: 'Trap bar deadlift', sets: 3, reps: '5', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: 'RIR 4 — easy, move fast. Superset with the row.', track: true },
+              { name: 'Single-arm DB row', sets: 3, reps: '10/side', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true }
             ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Peloton bike intervals', sets: 5, reps: '30s on / 90s off', tempo: '—', load: 'Mod-hard', who: 'D-Rock', notes: 'Pull back 30%.', isInterval: true, workSec: 30, restSec: 90 }
-            ]},
-            { name: 'Shared Core', exercises: [
-              { name: 'Pallof press', sets: 3, reps: '10/side', tempo: '2s hold', load: 'Band', who: 'Both', notes: '' },
-              { name: 'Side plank', sets: 2, reps: '30s/side', tempo: 'iso', load: 'BW', who: 'Both', notes: '' }
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB bench press', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: '', track: true },
+              { name: 'Goblet squat', sets: 2, reps: '10', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true }
             ]}
           ]
         },
         {
-          day: 'WED', date: 'Aug 12', theme: 'Upper Mass + Rotational (Deload)',
+          day: 'TUE', date: 'Aug 11', theme: 'BJJ — Mount Attacks',
           blocks: [
-            { name: 'Warmup', exercises: [
-              { name: 'Bike or tread easy', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: 'Band Y-T-W', sets: 2, reps: '8 each', tempo: '—', load: 'Light', who: 'Both', notes: '' },
-              { name: 'Shoulder CARs + T-spine', sets: 2, reps: '5/side', tempo: 'slow', load: 'BW', who: 'Both', notes: '' }
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + technical stand-up', sets: 2, reps: '20 yd / 5 ea', tempo: '—', load: 'BW', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Rotational Maintain', exercises: [
-              { name: 'Med ball rotational throw', sets: 3, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Feel fast.' },
-              { name: 'Med ball overhead slam', sets: 3, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: '' }
+            { name: 'Learn', exercises: [
+              { name: 'Watch: mount control + armbar', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Stay heavy on top, isolate the arm.', video: 'mount control and armbar for beginners bjj' }
             ]},
-            { name: 'Shared Push — Reduced', exercises: [
-              { name: 'DB bench press', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: 'RIR 4.', track: true },
-              { name: 'DB incline press', sets: 2, reps: '10', tempo: '2-0-1-0', load: 'Light-mod', who: 'Both', notes: '', track: true }
+            { name: 'Drill', exercises: [
+              { name: 'Drill: mount → armbar', sets: 3, reps: '5/side', tempo: 'ctrl', load: '—', who: 'Both', notes: 'Control first, then attack. Slow and safe on the arm.', track: true }
             ]},
-            { name: 'Shared Pull — Reduced', exercises: [
-              { name: 'Single-arm DB row', sets: 3, reps: '10/side', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true },
-              { name: 'Band face pull', sets: 3, reps: '15', tempo: '2s hold', load: 'Band', who: 'Both', notes: '' }
-            ]},
-            { name: 'Arms', exercises: [
-              { name: 'DB curl', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true },
-              { name: 'DB overhead triceps extension', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true }
+            { name: 'Roll — Positional', exercises: [
+              { name: 'Positional: hold / escape mount', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Top keeps mount + attacks; bottom escapes. Switch each round.', isInterval: true, workSec: 180, restSec: 60 }
             ]}
           ]
         },
         {
-          day: 'FRI', date: 'Aug 14', theme: 'Total-Body Power + Strength (Deload)',
+          day: 'THU', date: 'Aug 13', theme: 'Power & Mass — Upper (Deload)',
           blocks: [
             { name: 'Warmup', exercises: [
-              { name: 'Bike easy', sets: 1, reps: '4 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' },
-              { name: 'Mobility flow', sets: 2, reps: '5 min', tempo: '—', load: 'BW', who: 'Both', notes: '' },
-              { name: 'Pogo hops', sets: 2, reps: '15', tempo: '—', load: 'BW', who: 'Both', notes: '' }
+              { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
             ]},
-            { name: 'Frank — Explosive Maintain', exercises: [
-              { name: 'Broad jump', sets: 3, reps: '3', tempo: '—', load: 'BW', who: 'Frank', notes: 'Quality reps, full recovery.' },
-              { name: 'Med ball overhead slam', sets: 3, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: '' },
-              { name: 'Lateral bound + stick', sets: 2, reps: '4/side', tempo: '—', load: 'BW', who: 'Frank', notes: '' }
+            { name: 'Frank — Rotational Power', exercises: [
+              { name: 'Med ball overhead slam', sets: 3, reps: '5', tempo: '—', load: '10 lb', who: 'Frank', notes: 'Feel fast, not fried.' },
+              { name: 'Med ball rotational throw', sets: 2, reps: '4/side', tempo: '—', load: '10 lb', who: 'Frank', notes: '' }
             ]},
-            { name: 'Shared Lift — Full Body', exercises: [
-              { name: 'Goblet squat', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: 'RIR 4 — crisp, not maxed.', track: true },
-              { name: 'Floor press', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Light-mod', who: 'Both', notes: 'Move fast.', track: true },
-              { name: 'Trap bar farmer carry', sets: 2, reps: '40 yd', tempo: '—', load: 'Moderate', who: 'Both', notes: '', track: true }
+            { name: 'Strength Superset A', exercises: [
+              { name: 'DB bench press', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'Both', notes: 'RIR 4. Superset with the row.', track: true },
+              { name: 'Bent-over barbell row', sets: 3, reps: '8', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true }
             ]},
-            { name: 'D-Rock — Conditioning', exercises: [
-              { name: 'Zone 2 bike or walk', sets: 1, reps: '30 min', tempo: '—', load: 'Z2', who: 'D-Rock', notes: 'Easy aerobic.' }
+            { name: 'Strength Superset B', exercises: [
+              { name: 'DB reverse lunge', sets: 2, reps: '8/leg', tempo: 'ctrl', load: 'Moderate', who: 'Both', notes: '', track: true },
+              { name: 'DB curl', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'Both', notes: '', track: true }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Aug 14', theme: 'BJJ — Back Control + Flow Roll',
+          blocks: [
+            { name: 'BJJ Warmup', exercises: [
+              { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: '' }
             ]},
-            { name: 'Core', exercises: [
-              { name: 'Suitcase carry', sets: 2, reps: '30 yd/side', tempo: '—', load: 'Moderate', who: 'Both', notes: '', track: true },
-              { name: 'Bird dog', sets: 2, reps: '8/side', tempo: '3s hold', load: 'BW', who: 'Both', notes: '' }
+            { name: 'Learn', exercises: [
+              { name: 'Watch: back control — seatbelt & rear naked choke', sets: 1, reps: '4 min', tempo: '—', load: '—', who: 'Both', notes: 'Seatbelt grip, hooks in, finish the choke. Go slow on the neck when drilling.', video: 'back control seatbelt and rear naked choke basics bjj' }
+            ]},
+            { name: 'Drill', exercises: [
+              { name: 'Drill: take the back → RNC', sets: 3, reps: '5/side', tempo: 'ctrl', load: '—', who: 'Both', notes: 'Control the seatbelt before hunting the finish.', track: true }
+            ]},
+            { name: 'Roll — Flow', exercises: [
+              { name: 'Flow roll: tie the block together', sets: 3, reps: '3-min round', tempo: '—', load: '—', who: 'Both', notes: 'Light, playful rounds — move through everything you learned. 30–50% pace.', isInterval: true, workSec: 180, restSec: 60 }
             ]}
           ]
         }
@@ -844,30 +779,27 @@ export const programIdForPerson = (name) =>
 // Helpers
 export const exerciseKey = (w, s, b, e) => `w${w}-s${s}-b${b}-e${e}`;
 
+const DAY_TO_NUM = { SUN: 0, MON: 1, TUE: 2, WED: 3, THU: 4, FRI: 5, SAT: 6 };
+
+// Pick the session to surface as "up next": today's session if it's a training
+// day, otherwise the next upcoming session this week, wrapping to the first.
+// Reads each session's own `day`, so it works for any weekly schedule.
 export const getCurrentSession = (program = PROGRAM) => {
   const start = new Date(program.startDate);
   const today = new Date();
   const daysSince = Math.floor((today - start) / 86400000);
   if (daysSince < 0) return { weekIdx: 0, sessionIdx: 0 };
   const weekIdx = Math.min(Math.floor(daysSince / 7), program.weeks.length - 1);
-  const dayOfWeek = today.getDay();
   const week = program.weeks[weekIdx];
-  const n = week.sessions.length;
-  let sessionIdx;
-  if (n <= 3) {
-    // 3-day (MON/WED/FRI) block: Mon–Tue → 0, Wed–Thu → 1, Fri–Sun → 2.
-    if (dayOfWeek === 1 || dayOfWeek === 2) sessionIdx = 0;
-    else if (dayOfWeek === 3 || dayOfWeek === 4) sessionIdx = 1;
-    else sessionIdx = 2;
-  } else {
-    // 4-day (MON/TUE/THU/SAT) block.
-    if (dayOfWeek >= 1 && dayOfWeek <= 2) sessionIdx = dayOfWeek - 1;
-    else if (dayOfWeek >= 3 && dayOfWeek <= 5) sessionIdx = 2;
-    else sessionIdx = 3;
-  }
-  sessionIdx = Math.min(sessionIdx, n - 1);
+  const dayOfWeek = today.getDay();
+  const dayNums = week.sessions.map(s => DAY_TO_NUM[s.day] ?? 1);
+  let sessionIdx = dayNums.indexOf(dayOfWeek);
+  if (sessionIdx === -1) sessionIdx = dayNums.findIndex(d => d > dayOfWeek);
+  if (sessionIdx === -1) sessionIdx = 0;
   return { weekIdx, sessionIdx };
 };
 
-export const ytSearchUrl = (name) =>
-  `https://www.youtube.com/results?search_query=${encodeURIComponent(name + ' form demo')}`;
+export const ytQueryUrl = (query) =>
+  `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+
+export const ytSearchUrl = (name) => ytQueryUrl(name + ' form demo');
