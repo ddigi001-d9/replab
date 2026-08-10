@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { ArrowLeft, X } from 'lucide-react';
 import { ExerciseCard } from './ExerciseCard.jsx';
 import { Timer } from './Timer.jsx';
-import { exerciseKey } from '../data/program.js';
+import { exerciseKey, displayDate } from '../data/program.js';
 
-export function SessionScreen({ program, weekIdx, sessionIdx, sets, updateSets, soundEnabled, onBack }) {
+export function SessionScreen({ program, cycle = 0, weekIdx, sessionIdx, sets, updateSets, soundEnabled, onBack }) {
   const week = program.weeks[weekIdx];
   const session = week.sessions[sessionIdx];
   const [showTimer, setShowTimer] = useState(false);
@@ -13,7 +13,7 @@ export function SessionScreen({ program, weekIdx, sessionIdx, sets, updateSets, 
   const totalEx = session.blocks.reduce((sum, b) => sum + b.exercises.length, 0);
   const doneEx = session.blocks.reduce((sum, b, bIdx) =>
     sum + b.exercises.filter((ex, eIdx) => {
-      const k = exerciseKey(weekIdx, sessionIdx, bIdx, eIdx);
+      const k = exerciseKey(cycle, weekIdx, sessionIdx, bIdx, eIdx);
       const sd = sets?.[k] || {};
       return Array.from({ length: ex.sets }).every((_, i) => sd[i]?.done);
     }).length, 0);
@@ -30,7 +30,7 @@ export function SessionScreen({ program, weekIdx, sessionIdx, sets, updateSets, 
           </button>
           <div className="flex-1 min-w-0">
             <div className="text-[10px] tracking-[0.2em] font-bold text-amber-500">
-              WK {week.num} · {week.label} · {session.day} {session.date}
+              WK {week.num} · {week.label} · {session.day} {displayDate(program, cycle, weekIdx, session)}
             </div>
             <div className="font-black text-lg leading-tight text-zinc-100 truncate font-display">
               {session.theme}
@@ -62,7 +62,7 @@ export function SessionScreen({ program, weekIdx, sessionIdx, sets, updateSets, 
                   <ExerciseCard
                     key={eIdx}
                     exercise={ex}
-                    exKey={exerciseKey(weekIdx, sessionIdx, bIdx, eIdx)}
+                    exKey={exerciseKey(cycle, weekIdx, sessionIdx, bIdx, eIdx)}
                     sets={sets}
                     updateSets={updateSets}
                     soundEnabled={soundEnabled}

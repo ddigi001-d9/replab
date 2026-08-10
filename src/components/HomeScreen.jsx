@@ -1,6 +1,6 @@
 import React from 'react';
 import { Play, Check } from 'lucide-react';
-import { exerciseKey, getCurrentSession } from '../data/program.js';
+import { exerciseKey, getCurrentSession, displayDate } from '../data/program.js';
 import { PEOPLE } from '../data/program.js';
 
 export function HomeScreen({ program, profile, sets, onCycleProfile, onOpenSession }) {
@@ -19,7 +19,7 @@ export function HomeScreen({ program, profile, sets, onCycleProfile, onOpenSessi
     let done = 0;
     session.blocks.forEach((b, bIdx) => {
       b.exercises.forEach((ex, eIdx) => {
-        const k = exerciseKey(wIdx, sIdx, bIdx, eIdx);
+        const k = exerciseKey(current.cycle, wIdx, sIdx, bIdx, eIdx);
         const sd = sets?.[k] || {};
         Array.from({ length: ex.sets }).forEach((_, i) => { if (sd[i]?.done) done++; });
       });
@@ -62,10 +62,10 @@ export function HomeScreen({ program, profile, sets, onCycleProfile, onOpenSessi
               {currentSession.theme.toUpperCase()}
             </div>
             <div className="text-amber-500 text-sm font-mono mt-1">
-              Week {currentWeek.num} · {currentWeek.label} · {currentSession.day} {currentSession.date}
+              Week {currentWeek.num} · {currentWeek.label}{program.repeating ? ` · Cycle ${current.cycle + 1}` : ''} · {currentSession.day} {displayDate(program, current.cycle, current.weekIdx, currentSession)}
             </div>
             <button
-              onClick={() => onOpenSession(current.weekIdx, current.sessionIdx)}
+              onClick={() => onOpenSession(current.weekIdx, current.sessionIdx, current.cycle)}
               className="mt-4 w-full bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-black font-black tracking-wider rounded-xl py-4 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform font-display"
             >
               <Play className="w-5 h-5 fill-black" /> START SESSION
@@ -92,7 +92,7 @@ export function HomeScreen({ program, profile, sets, onCycleProfile, onOpenSessi
                 return (
                   <button
                     key={sIdx}
-                    onClick={() => onOpenSession(wIdx, sIdx)}
+                    onClick={() => onOpenSession(wIdx, sIdx, current.cycle)}
                     className={`text-left p-3 rounded-xl border active:scale-[0.97] transition-transform ${
                       isCurrent ? 'bg-amber-500/10 border-amber-500/50' :
                       prog.pct === 100 ? 'bg-emerald-950/30 border-emerald-800/50' :
@@ -100,7 +100,7 @@ export function HomeScreen({ program, profile, sets, onCycleProfile, onOpenSessi
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <div className="font-mono font-black text-xs text-zinc-300">{sess.day} {sess.date}</div>
+                      <div className="font-mono font-black text-xs text-zinc-300">{sess.day} {displayDate(program, current.cycle, wIdx, sess)}</div>
                       {prog.pct === 100 ? <Check className="w-4 h-4 text-emerald-500" /> :
                         prog.pct > 0 ? <div className="text-[10px] font-mono text-amber-500 font-bold">{prog.pct}%</div> :
                         null}
