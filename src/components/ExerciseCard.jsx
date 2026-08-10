@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronRight, Check, Zap, Youtube, Timer as TimerIcon } from 'lucide-react';
 import { SetRow } from './SetRow.jsx';
 import { Timer } from './Timer.jsx';
-import { ytSearchUrl } from '../data/program.js';
+import { ytSearchUrl, ytQueryUrl } from '../data/program.js';
 
 export function ExerciseCard({ exercise, exKey, sets, updateSets, soundEnabled, onStartTimer, isPower }) {
   const [expanded, setExpanded] = useState(false);
@@ -52,12 +52,12 @@ export function ExerciseCard({ exercise, exKey, sets, updateSets, soundEnabled, 
           )}
           <div className="flex items-center justify-between gap-2">
             <a
-              href={ytSearchUrl(exercise.name)}
+              href={exercise.video ? ytQueryUrl(exercise.video) : ytSearchUrl(exercise.name)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs text-zinc-400 px-3 py-1.5 bg-zinc-800 rounded-lg active:bg-zinc-700"
             >
-              <Youtube className="w-4 h-4 text-red-500" /> Form demo
+              <Youtube className="w-4 h-4 text-red-500" /> {exercise.video ? 'Watch' : 'Form demo'}
             </a>
             <div className="text-xs text-zinc-500 font-mono">Load: <span className="text-zinc-300">{exercise.load}</span></div>
           </div>
