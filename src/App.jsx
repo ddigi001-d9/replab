@@ -31,7 +31,9 @@ const LOGAN_RESET_VERSION = 1;
 // from the previous ramp block would otherwise show as checked in the new one.
 // Bump the version to wipe again on every device.
 // v2: Jul 20, 2026 restructure into the 20-min Power/BJJ split.
-const RAMP_RESET_VERSION = 2;
+// v3: cycle-scoped set keys (c#-w#-...) for the repeating cycle — clears the
+//     old positional keys so nothing lingers under the new format.
+const RAMP_RESET_VERSION = 3;
 
 function normalize(state) {
   let s = migrate(state);
@@ -90,6 +92,7 @@ export default function App() {
       <div className="max-w-md mx-auto">
         <SessionScreen
           program={program}
+          cycle={openSession.cycle || 0}
           weekIdx={openSession.weekIdx}
           sessionIdx={openSession.sessionIdx}
           sets={sets}
@@ -109,7 +112,7 @@ export default function App() {
           profile={profile}
           sets={sets}
           onCycleProfile={cycleProfile}
-          onOpenSession={(w, s) => setOpenSession({ weekIdx: w, sessionIdx: s })}
+          onOpenSession={(w, s, c) => setOpenSession({ weekIdx: w, sessionIdx: s, cycle: c || 0 })}
         />
       )}
       {view === 'stats' && <StatsScreen program={program} sets={sets} />}

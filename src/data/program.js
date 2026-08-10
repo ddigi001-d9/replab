@@ -6,7 +6,8 @@
 export const PROGRAM = {
   id: 'ramp',
   name: 'D-Rock & Frank — 20-Min Power & BJJ',
-  startDate: '2026-07-20',
+  startDate: '2026-08-10',
+  repeating: true, // auto-advance: after the last week, loop back to Week 1 as a new cycle
   note: "20-min sessions. Mon/Thu build power & mass; Tue/Fri learn BJJ (watch the demo, then drill it). Frank plays libero — volleyball M–F, 90 min — so keep the lifts short and crisp, eat for mass (protein + slight surplus, sleep 9+), and treat BJJ days as skill work + active recovery. Tap 'Watch' on a BJJ move to pull up a demo video.",
   weeks: [
     {
@@ -15,7 +16,7 @@ export const PROGRAM = {
       blurb: '20-min sessions. Lift Mon/Thu, learn BJJ Tue/Fri. Groove the movements, set baselines.',
       sessions: [
         {
-          day: 'MON', date: 'Jul 20', theme: 'Power & Mass — Lower',
+          day: 'MON', date: 'Aug 10', theme: 'Power & Mass — Lower',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: 'Raise the heart rate, open hips + shoulders. Keep it moving — 20-min cap.' }
@@ -34,7 +35,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Jul 21', theme: 'BJJ — Movement & Escapes',
+          day: 'TUE', date: 'Aug 11', theme: 'BJJ — Movement & Escapes',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp (hip escape)', sets: 2, reps: '20 yd', tempo: '—', load: 'BW', who: 'Both', notes: 'Drive off the foot, slide the hips out. The most important movement in BJJ.' },
@@ -52,7 +53,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Jul 23', theme: 'Power & Mass — Upper',
+          day: 'THU', date: 'Aug 13', theme: 'Power & Mass — Upper',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: 'Warm the shoulders and mid-back.' }
@@ -72,7 +73,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'FRI', date: 'Jul 24', theme: 'BJJ — Closed Guard',
+          day: 'FRI', date: 'Aug 14', theme: 'BJJ — Closed Guard',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: 'Prime the hips.' },
@@ -97,7 +98,7 @@ export const PROGRAM = {
       blurb: 'Add load on the lifts. On the mat, start turning defense into sweeps.',
       sessions: [
         {
-          day: 'MON', date: 'Jul 27', theme: 'Power & Mass — Lower',
+          day: 'MON', date: 'Aug 17', theme: 'Power & Mass — Lower',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
@@ -116,7 +117,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Jul 28', theme: 'BJJ — Scissor Sweep',
+          day: 'TUE', date: 'Aug 18', theme: 'BJJ — Scissor Sweep',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + technical stand-up', sets: 2, reps: '20 yd / 5 ea', tempo: '—', load: 'BW', who: 'Both', notes: '' },
@@ -134,7 +135,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Jul 30', theme: 'Power & Mass — Upper',
+          day: 'THU', date: 'Aug 20', theme: 'Power & Mass — Upper',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
@@ -154,7 +155,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'FRI', date: 'Jul 31', theme: 'BJJ — Hip Bump & Kimura',
+          day: 'FRI', date: 'Aug 21', theme: 'BJJ — Hip Bump & Kimura',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: '' },
@@ -179,7 +180,7 @@ export const PROGRAM = {
       blurb: 'Heaviest lifts of the block — power & mass peak. On the mat, get on top and pass.',
       sessions: [
         {
-          day: 'MON', date: 'Aug 3', theme: 'Power & Mass — Lower',
+          day: 'MON', date: 'Aug 24', theme: 'Power & Mass — Lower',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
@@ -198,7 +199,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Aug 4', theme: 'BJJ — Knee-Cut Pass',
+          day: 'TUE', date: 'Aug 25', theme: 'BJJ — Knee-Cut Pass',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + technical stand-up', sets: 2, reps: '20 yd / 5 ea', tempo: '—', load: 'BW', who: 'Both', notes: '' },
@@ -216,7 +217,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Aug 6', theme: 'Power & Mass — Upper',
+          day: 'THU', date: 'Aug 27', theme: 'Power & Mass — Upper',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
@@ -236,7 +237,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'FRI', date: 'Aug 7', theme: 'BJJ — Side Control Escapes',
+          day: 'FRI', date: 'Aug 28', theme: 'BJJ — Side Control Escapes',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: '' },
@@ -261,7 +262,7 @@ export const PROGRAM = {
       blurb: 'Pull the lifts back to recharge — keep the snap. On the mat, tie it together and flow.',
       sessions: [
         {
-          day: 'MON', date: 'Aug 10', theme: 'Power & Mass — Lower (Deload)',
+          day: 'MON', date: 'Aug 31', theme: 'Power & Mass — Lower (Deload)',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + dynamic flow', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
@@ -280,7 +281,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'TUE', date: 'Aug 11', theme: 'BJJ — Mount Attacks',
+          day: 'TUE', date: 'Sep 1', theme: 'BJJ — Mount Attacks',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + technical stand-up', sets: 2, reps: '20 yd / 5 ea', tempo: '—', load: 'BW', who: 'Both', notes: '' }
@@ -297,7 +298,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'THU', date: 'Aug 13', theme: 'Power & Mass — Upper (Deload)',
+          day: 'THU', date: 'Sep 3', theme: 'Power & Mass — Upper (Deload)',
           blocks: [
             { name: 'Warmup', exercises: [
               { name: 'Bike + band pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'Both', notes: '' }
@@ -317,7 +318,7 @@ export const PROGRAM = {
           ]
         },
         {
-          day: 'FRI', date: 'Aug 14', theme: 'BJJ — Back Control + Flow Roll',
+          day: 'FRI', date: 'Sep 4', theme: 'BJJ — Back Control + Flow Roll',
           blocks: [
             { name: 'BJJ Warmup', exercises: [
               { name: 'Shrimp + bridges', sets: 2, reps: '30s each', tempo: '—', load: 'BW', who: 'Both', notes: '' }
@@ -777,27 +778,47 @@ export const programIdForPerson = (name) =>
   (PEOPLE.find(p => p.name === name) || PEOPLE[0]).programId;
 
 // Helpers
-export const exerciseKey = (w, s, b, e) => `w${w}-s${s}-b${b}-e${e}`;
+// Set-log key. `cycle` scopes logs per repeat of a repeating program, so each
+// new cycle starts with a fresh log instead of showing the last one's checkmarks.
+export const exerciseKey = (cycle, w, s, b, e) => `c${cycle}-w${w}-s${s}-b${b}-e${e}`;
 
 const DAY_TO_NUM = { SUN: 0, MON: 1, TUE: 2, WED: 3, THU: 4, FRI: 5, SAT: 6 };
 
 // Pick the session to surface as "up next": today's session if it's a training
 // day, otherwise the next upcoming session this week, wrapping to the first.
 // Reads each session's own `day`, so it works for any weekly schedule.
+// For a `repeating` program, weekIdx loops and `cycle` counts the repeats;
+// otherwise it clamps to the final week (one-time block).
 export const getCurrentSession = (program = PROGRAM) => {
-  const start = new Date(program.startDate);
+  const start = new Date(program.startDate + 'T00:00:00');
   const today = new Date();
   const daysSince = Math.floor((today - start) / 86400000);
-  if (daysSince < 0) return { weekIdx: 0, sessionIdx: 0 };
-  const weekIdx = Math.min(Math.floor(daysSince / 7), program.weeks.length - 1);
+  const weeksCount = program.weeks.length;
+  if (daysSince < 0) return { cycle: 0, weekIdx: 0, sessionIdx: 0 };
+  const totalWeeks = Math.floor(daysSince / 7);
+  const cycle = program.repeating ? Math.floor(totalWeeks / weeksCount) : 0;
+  const weekIdx = program.repeating ? totalWeeks % weeksCount : Math.min(totalWeeks, weeksCount - 1);
   const week = program.weeks[weekIdx];
   const dayOfWeek = today.getDay();
   const dayNums = week.sessions.map(s => DAY_TO_NUM[s.day] ?? 1);
   let sessionIdx = dayNums.indexOf(dayOfWeek);
   if (sessionIdx === -1) sessionIdx = dayNums.findIndex(d => d > dayOfWeek);
   if (sessionIdx === -1) sessionIdx = 0;
-  return { weekIdx, sessionIdx };
+  return { cycle, weekIdx, sessionIdx };
 };
+
+// Date shown for a session. Repeating programs compute it from startDate so the
+// dates roll forward each cycle; one-time programs use the authored `date`.
+export const sessionDate = (program, cycle, weekIdx, session) => {
+  const d = new Date(program.startDate + 'T00:00:00');
+  const weekday = DAY_TO_NUM[session.day] ?? 1;
+  const offset = (cycle * program.weeks.length + weekIdx) * 7 + (weekday - 1);
+  d.setDate(d.getDate() + offset);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+};
+
+export const displayDate = (program, cycle, weekIdx, session) =>
+  program.repeating ? sessionDate(program, cycle, weekIdx, session) : session.date;
 
 export const ytQueryUrl = (query) =>
   `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;

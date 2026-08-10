@@ -1,31 +1,33 @@
 import React from 'react';
 import { Trophy } from 'lucide-react';
-import { exerciseKey } from '../data/program.js';
+
+// Keys are `c{cycle}-w{week}-s{session}-b{block}-e{exercise}`. Parse them straight
+// from the log so stats span every cycle of a repeating program, not just one.
+const KEY_RE = /^c(\d+)-w(\d+)-s(\d+)-b(\d+)-e(\d+)$/;
 
 export function StatsScreen({ program, sets }) {
   const allEntries = [];
-  program.weeks.forEach((week, wIdx) => {
-    week.sessions.forEach((session, sIdx) => {
-      session.blocks.forEach((block, bIdx) => {
-        block.exercises.forEach((ex, eIdx) => {
-          const k = exerciseKey(wIdx, sIdx, bIdx, eIdx);
-          const sd = sets?.[k] || {};
-          Object.entries(sd).forEach(([setIdx, data]) => {
-            if (data?.done && (data.weight || data.reps)) {
-              allEntries.push({
-                exercise: ex.name,
-                week: week.num,
-                day: session.day,
-                date: session.date,
-                weight: parseFloat(data.weight) || 0,
-                reps: parseFloat(data.reps) || 0,
-                rpe: data.rpe,
-                who: ex.who
-              });
-            }
-          });
+  Object.entries(sets || {}).forEach(([key, sd]) => {
+    const m = KEY_RE.exec(key);
+    if (!m) return;
+    const [cycle, wIdx, sIdx, bIdx, eIdx] = m.slice(1).map(Number);
+    const week = program.weeks[wIdx];
+    const session = week?.sessions[sIdx];
+    const ex = session?.blocks[bIdx]?.exercises[eIdx];
+    if (!ex) return;
+    Object.entries(sd || {}).forEach(([setIdx, data]) => {
+      if (data?.done && (data.weight || data.reps)) {
+        allEntries.push({
+          exercise: ex.name,
+          cycle,
+          week: week.num,
+          day: session.day,
+          weight: parseFloat(data.weight) || 0,
+          reps: parseFloat(data.reps) || 0,
+          rpe: data.rpe,
+          who: ex.who
         });
-      });
+      }
     });
   });
 
@@ -40,7 +42,7 @@ export function StatsScreen({ program, sets }) {
   const sorted = Object.entries(byExercise).sort((a, b) => b[1].totalSets - a[1].totalSets);
 
   const totalSetsLogged = allEntries.length;
-  const totalSessions = new Set(allEntries.map(e => `${e.week}-${e.day}`)).size;
+  const totalSessions = new Set(allEntries.map(e => `${e.cycle}-${e.week}-${e.day}`)).size;
   const totalVolume = allEntries.reduce((sum, e) => sum + (e.weight * e.reps), 0);
 
   return (
