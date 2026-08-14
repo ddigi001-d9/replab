@@ -765,13 +765,477 @@ export const LOGAN_PROGRAM = {
   ]
 };
 
+// John — Recomp 6 (dumbbell-only, build muscle + lose fat).
+// 4 days/week, ~30 min a night. Dumbbells to 45 lb, floor + bodyweight — no bench
+// or machines. Short rest + a metabolic finisher drive fat loss; the main lifts
+// build muscle. One-time 6-week block (not repeating).
+export const JOHN_PROGRAM = {
+  id: 'john',
+  name: 'John — Recomp 6',
+  startDate: '2026-08-10',
+  note: "45 and chasing both muscle and fat loss — the recomp play: lift hard for muscle, keep rest short, and finish with a metabolic burst. The kitchen drives the fat loss: slight calorie deficit, high protein (~0.8–1 g/lb of goal bodyweight), 8–10k steps a day, 7+ hrs sleep. 45-lb dumbbells are plenty — when a lift gets easy, add reps, slow the tempo, or cut rest before chasing heavier. Any sharp joint pain = stop and regress.",
+  weeks: [
+    {
+      num: 1,
+      label: 'FOUNDATION',
+      blurb: 'Learn the movements, moderate loads. Keep rest ~60s so the heart rate stays up.',
+      sessions: [
+        {
+          day: 'MON', date: 'Aug 10', theme: 'Lower Body — Squat',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight squats + hip openers', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: 'Raise the heart rate, loosen the hips.' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Goblet squat', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate DB', who: 'John', notes: 'Chest up, sit between the hips. Rest ~60s.', track: true },
+              { name: 'DB reverse lunge', sets: 3, reps: '10/leg', tempo: 'ctrl', load: 'Moderate', who: 'John', notes: 'Control the step back, drive through the heel.', track: true },
+              { name: 'DB Romanian deadlift', sets: 3, reps: '12', tempo: '3-0-1-0', load: 'Moderate', who: 'John', notes: 'Hinge, soft knees, feel the hamstrings.', track: true },
+              { name: 'DB glute bridge (floor)', sets: 3, reps: '15', tempo: '2-1-1-0', load: 'Moderate on hips', who: 'John', notes: 'DB on the hips, squeeze hard at the top.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB thruster burnout', sets: 4, reps: '40s on / 20s off', tempo: '—', load: 'Light-mod', who: 'John', notes: 'Squat to overhead press, nonstop. The fat-burn close.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Aug 11', theme: 'Upper Body — Push',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Push-ups + arm circles + shoulder taps', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: 'Warm the shoulders and chest.' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB floor press', sets: 3, reps: '12', tempo: '2-1-1-0', load: 'Moderate', who: 'John', notes: 'Press from the floor — pause when the triceps touch down.', track: true },
+              { name: 'DB standing overhead press', sets: 3, reps: '10', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: 'Ribs down, no back arch, full lockout.', track: true },
+              { name: 'DB lateral raise', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: 'Lead with the elbows, control the way down.', track: true },
+              { name: 'DB overhead triceps extension', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: 'Full stretch behind the head.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Push-up + mountain climber combo', sets: 4, reps: '40s on / 20s off', tempo: '—', load: 'BW', who: 'John', notes: 'Push-ups to near-failure, then climbers. Keep moving.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Aug 13', theme: 'Lower Body — Hinge',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight good mornings + leg swings', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: 'Prime the hips and hamstrings.' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB Romanian deadlift', sets: 3, reps: '12', tempo: '3-0-1-0', load: 'Moderate-heavy', who: 'John', notes: 'Main hinge — load the hamstrings and glutes.', track: true },
+              { name: 'Split squat (rear foot on chair)', sets: 3, reps: '10/leg', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: 'Rear foot on a chair/couch; if not, do a reverse lunge.', track: true },
+              { name: 'DB sumo squat', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: 'Wide stance, toes out, drive the knees out.', track: true },
+              { name: 'DB calf raise', sets: 3, reps: '20', tempo: '2-0-2-0', load: 'Moderate', who: 'John', notes: 'Full range, pause at the top.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB swing (hip hinge)', sets: 4, reps: '40s on / 20s off', tempo: '—', load: 'Moderate', who: 'John', notes: 'Snap the hips, not a squat. Big fat-burner.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Aug 14', theme: 'Upper Body — Pull',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Arm circles + light DB rows + band-style pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: 'Wake up the back and rear delts.' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Bent-over DB row', sets: 3, reps: '12', tempo: '2-1-1-0', load: 'Moderate', who: 'John', notes: 'Flat back, pull to the hips, squeeze the shoulder blades.', track: true },
+              { name: 'Single-arm DB row', sets: 3, reps: '10/side', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: 'Hand on a knee/chair, full stretch at the bottom.', track: true },
+              { name: 'DB rear-delt fly', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: 'Posture + shoulder health.', track: true },
+              { name: 'DB hammer curl', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: 'No swing — control it.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Renegade row + plank hold', sets: 4, reps: '40s on / 20s off', tempo: '—', load: 'Light-mod', who: 'John', notes: 'Row in a plank, hips still. Core + back.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      num: 2,
+      label: 'BUILD',
+      blurb: 'Add a little volume. Same movements — beat last week by a rep or two.',
+      sessions: [
+        {
+          day: 'MON', date: 'Aug 17', theme: 'Lower Body — Squat',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight squats + hip openers', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Goblet squat', sets: 4, reps: '12', tempo: '2-0-1-0', load: 'Moderate DB', who: 'John', notes: 'Add a 4th set this week. Rest ~60s.', track: true },
+              { name: 'DB reverse lunge', sets: 3, reps: '12/leg', tempo: 'ctrl', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB Romanian deadlift', sets: 3, reps: '12', tempo: '3-0-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true },
+              { name: 'DB glute bridge (floor)', sets: 3, reps: '15', tempo: '2-1-1-0', load: 'Heavier on hips', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB thruster burnout', sets: 5, reps: '40s on / 20s off', tempo: '—', load: 'Light-mod', who: 'John', notes: '+1 round vs Wk1.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Aug 18', theme: 'Upper Body — Push',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Push-ups + arm circles + shoulder taps', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB floor press', sets: 4, reps: '12', tempo: '2-1-1-0', load: 'Moderate', who: 'John', notes: 'Add a 4th set.', track: true },
+              { name: 'DB standing overhead press', sets: 3, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB lateral raise', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB overhead triceps extension', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Push-up + mountain climber combo', sets: 5, reps: '40s on / 20s off', tempo: '—', load: 'BW', who: 'John', notes: '+1 round.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Aug 20', theme: 'Lower Body — Hinge',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight good mornings + leg swings', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB Romanian deadlift', sets: 4, reps: '12', tempo: '3-0-1-0', load: 'Moderate-heavy', who: 'John', notes: 'Add a 4th set.', track: true },
+              { name: 'Split squat (rear foot on chair)', sets: 3, reps: '12/leg', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB sumo squat', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB calf raise', sets: 3, reps: '20', tempo: '2-0-2-0', load: 'Heavier', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB swing (hip hinge)', sets: 5, reps: '40s on / 20s off', tempo: '—', load: 'Moderate', who: 'John', notes: '+1 round.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Aug 21', theme: 'Upper Body — Pull',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Arm circles + light DB rows + band-style pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Bent-over DB row', sets: 4, reps: '12', tempo: '2-1-1-0', load: 'Moderate', who: 'John', notes: 'Add a 4th set.', track: true },
+              { name: 'Single-arm DB row', sets: 3, reps: '12/side', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB rear-delt fly', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB hammer curl', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Renegade row + plank hold', sets: 5, reps: '40s on / 20s off', tempo: '—', load: 'Light-mod', who: 'John', notes: '+1 round.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      num: 3,
+      label: 'INTENSIFY',
+      blurb: 'Slow the lowering phase, cut rest to ~45s. More tension, more burn.',
+      sessions: [
+        {
+          day: 'MON', date: 'Aug 24', theme: 'Lower Body — Squat',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight squats + hip openers', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Goblet squat', sets: 4, reps: '12', tempo: '3-1-1-0', load: 'Moderate-heavy', who: 'John', notes: 'Slow 3s down, 1s pause. Rest ~45s.', track: true },
+              { name: 'DB reverse lunge', sets: 3, reps: '12/leg', tempo: '3-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB Romanian deadlift', sets: 4, reps: '10', tempo: '4-0-1-0', load: 'Heavier', who: 'John', notes: 'Really feel the stretch.', track: true },
+              { name: 'DB glute bridge (floor)', sets: 3, reps: '15', tempo: '2-2-1-0', load: 'Heavier on hips', who: 'John', notes: '2s squeeze at the top.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB thruster burnout', sets: 5, reps: '40s on / 20s off', tempo: '—', load: 'Moderate', who: 'John', notes: 'Heavier than Wk2.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Aug 25', theme: 'Upper Body — Push',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Push-ups + arm circles + shoulder taps', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB floor press', sets: 4, reps: '10', tempo: '3-1-1-0', load: 'Heavier', who: 'John', notes: 'Slow down, pause on the floor. Rest ~45s.', track: true },
+              { name: 'DB standing overhead press', sets: 4, reps: '10', tempo: '3-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB lateral raise', sets: 3, reps: '18', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB overhead triceps extension', sets: 3, reps: '15', tempo: '3-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Push-up + mountain climber combo', sets: 5, reps: '45s on / 15s off', tempo: '—', load: 'BW', who: 'John', notes: 'Less rest.', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Aug 27', theme: 'Lower Body — Hinge',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight good mornings + leg swings', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB Romanian deadlift', sets: 4, reps: '10', tempo: '4-0-1-0', load: 'Heavier', who: 'John', notes: 'Slowest tempo of the block.', track: true },
+              { name: 'Split squat (rear foot on chair)', sets: 4, reps: '10/leg', tempo: '3-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB sumo squat', sets: 3, reps: '15', tempo: '3-1-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true },
+              { name: 'DB calf raise', sets: 4, reps: '20', tempo: '2-1-2-0', load: 'Heavier', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB swing (hip hinge)', sets: 5, reps: '45s on / 15s off', tempo: '—', load: 'Moderate', who: 'John', notes: 'Less rest.', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Aug 28', theme: 'Upper Body — Pull',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Arm circles + light DB rows + band-style pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Bent-over DB row', sets: 4, reps: '10', tempo: '3-1-1-0', load: 'Heavier', who: 'John', notes: '1s squeeze at the top. Rest ~45s.', track: true },
+              { name: 'Single-arm DB row', sets: 4, reps: '10/side', tempo: '3-0-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true },
+              { name: 'DB rear-delt fly', sets: 3, reps: '18', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB hammer curl', sets: 3, reps: '12', tempo: '3-0-1-0', load: 'Moderate-heavy', who: 'John', notes: 'Slow negatives.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Renegade row + plank hold', sets: 5, reps: '45s on / 15s off', tempo: '—', load: 'Light-mod', who: 'John', notes: 'Less rest.', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      num: 4,
+      label: 'OVERLOAD',
+      blurb: 'Highest reps and shortest rest so far. Push each set close to failure (RIR 1–2).',
+      sessions: [
+        {
+          day: 'MON', date: 'Aug 31', theme: 'Lower Body — Squat',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight squats + hip openers', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Goblet squat', sets: 4, reps: '15', tempo: '2-0-1-0', load: 'Moderate-heavy', who: 'John', notes: 'Higher reps, rest ~45s. RIR 1–2.', track: true },
+              { name: 'DB reverse lunge', sets: 3, reps: '14/leg', tempo: 'ctrl', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB Romanian deadlift', sets: 4, reps: '12', tempo: '3-0-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'DB glute bridge — 1.5 reps', sets: 3, reps: '12', tempo: 'ctrl', load: 'Heavier on hips', who: 'John', notes: 'Full rep, half rep, that = 1. Brutal squeeze.', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB thruster burnout', sets: 6, reps: '40s on / 20s off', tempo: '—', load: 'Moderate', who: 'John', notes: '6 rounds.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Sep 1', theme: 'Upper Body — Push',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Push-ups + arm circles + shoulder taps', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB floor press', sets: 4, reps: '15', tempo: '2-1-1-0', load: 'Moderate-heavy', who: 'John', notes: 'Rest ~45s, RIR 1–2.', track: true },
+              { name: 'DB standing overhead press', sets: 4, reps: '12', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true },
+              { name: 'DB lateral raise', sets: 4, reps: '18', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB overhead triceps extension', sets: 3, reps: '18', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Push-up + mountain climber combo', sets: 6, reps: '45s on / 15s off', tempo: '—', load: 'BW', who: 'John', notes: '6 rounds.', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Sep 3', theme: 'Lower Body — Hinge',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight good mornings + leg swings', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB Romanian deadlift', sets: 4, reps: '12', tempo: '3-0-1-0', load: 'Heavier', who: 'John', notes: 'RIR 1–2.', track: true },
+              { name: 'Split squat (rear foot on chair)', sets: 4, reps: '12/leg', tempo: '2-0-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true },
+              { name: 'DB sumo squat — 1.5 reps', sets: 3, reps: '12', tempo: 'ctrl', load: 'Moderate-heavy', who: 'John', notes: 'Full, half, = 1 rep.', track: true },
+              { name: 'DB calf raise', sets: 4, reps: '25', tempo: '2-1-2-0', load: 'Heavier', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB swing (hip hinge)', sets: 6, reps: '40s on / 20s off', tempo: '—', load: 'Moderate', who: 'John', notes: '6 rounds.', isInterval: true, workSec: 40, restSec: 20 }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Sep 4', theme: 'Upper Body — Pull',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Arm circles + light DB rows + band-style pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Bent-over DB row', sets: 4, reps: '15', tempo: '2-1-1-0', load: 'Moderate-heavy', who: 'John', notes: 'RIR 1–2.', track: true },
+              { name: 'Single-arm DB row', sets: 4, reps: '12/side', tempo: '2-0-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'DB rear-delt fly', sets: 4, reps: '18', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB hammer curl', sets: 3, reps: '15', tempo: '2-0-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Renegade row + plank hold', sets: 6, reps: '45s on / 15s off', tempo: '—', load: 'Light-mod', who: 'John', notes: '6 rounds.', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      num: 5,
+      label: 'PEAK',
+      blurb: 'Densest week. Last set of each lift is an all-out AMRAP — leave nothing.',
+      sessions: [
+        {
+          day: 'MON', date: 'Sep 7', theme: 'Lower Body — Squat',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight squats + hip openers', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Goblet squat', sets: 4, reps: '15 (last set AMRAP)', tempo: '2-0-1-0', load: 'Heavier', who: 'John', notes: 'Final set = max clean reps. Rest ~45s.', track: true },
+              { name: 'DB reverse lunge', sets: 4, reps: '12/leg', tempo: 'ctrl', load: 'Moderate-heavy', who: 'John', notes: '', track: true },
+              { name: 'DB Romanian deadlift', sets: 4, reps: '12 (last set AMRAP)', tempo: '3-0-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'DB glute bridge — 1.5 reps', sets: 3, reps: '15', tempo: 'ctrl', load: 'Heavier on hips', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB thruster burnout', sets: 6, reps: '45s on / 15s off', tempo: '—', load: 'Moderate', who: 'John', notes: 'Densest finisher yet.', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Sep 8', theme: 'Upper Body — Push',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Push-ups + arm circles + shoulder taps', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB floor press', sets: 4, reps: '15 (last set AMRAP)', tempo: '2-1-1-0', load: 'Heavier', who: 'John', notes: 'Empty the tank on the last set.', track: true },
+              { name: 'DB standing overhead press', sets: 4, reps: '12', tempo: '2-0-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true },
+              { name: 'DB lateral raise', sets: 4, reps: '20', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB overhead triceps extension', sets: 3, reps: '18 (last set AMRAP)', tempo: '2-0-1-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Push-up + mountain climber combo', sets: 6, reps: '45s on / 15s off', tempo: '—', load: 'BW', who: 'John', notes: '', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Sep 10', theme: 'Lower Body — Hinge',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight good mornings + leg swings', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB Romanian deadlift', sets: 4, reps: '12 (last set AMRAP)', tempo: '3-0-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'Split squat (rear foot on chair)', sets: 4, reps: '12/leg', tempo: '2-0-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'DB sumo squat — 1.5 reps', sets: 3, reps: '15', tempo: 'ctrl', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'DB calf raise', sets: 4, reps: '25 (last set AMRAP)', tempo: '2-1-2-0', load: 'Heavier', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB swing (hip hinge)', sets: 6, reps: '45s on / 15s off', tempo: '—', load: 'Moderate', who: 'John', notes: '', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Sep 11', theme: 'Upper Body — Pull',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Arm circles + light DB rows + band-style pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Bent-over DB row', sets: 4, reps: '15 (last set AMRAP)', tempo: '2-1-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'Single-arm DB row', sets: 4, reps: '12/side', tempo: '2-0-1-0', load: 'Heavier', who: 'John', notes: '', track: true },
+              { name: 'DB rear-delt fly', sets: 4, reps: '20', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB hammer curl', sets: 4, reps: '15 (last set AMRAP)', tempo: '2-0-1-0', load: 'Moderate-heavy', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Renegade row + plank hold', sets: 6, reps: '45s on / 15s off', tempo: '—', load: 'Light-mod', who: 'John', notes: '', isInterval: true, workSec: 45, restSec: 15 }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      num: 6,
+      label: 'DELOAD',
+      blurb: 'Pull volume way back and recover. Keep it easy (RIR 4) — set up the next block fresh.',
+      sessions: [
+        {
+          day: 'MON', date: 'Sep 14', theme: 'Lower Body — Squat (Deload)',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight squats + hip openers', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Goblet squat', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Wk2 weight', who: 'John', notes: 'Easy, crisp reps. RIR 4. Rest as needed.', track: true },
+              { name: 'DB reverse lunge', sets: 2, reps: '10/leg', tempo: 'ctrl', load: 'Light-mod', who: 'John', notes: '', track: true },
+              { name: 'DB Romanian deadlift', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true },
+              { name: 'DB glute bridge (floor)', sets: 2, reps: '15', tempo: '2-1-1-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB thruster (easy)', sets: 3, reps: '30s on / 30s off', tempo: '—', load: 'Light', who: 'John', notes: 'Easy pace — just move.', isInterval: true, workSec: 30, restSec: 30 }
+            ]}
+          ]
+        },
+        {
+          day: 'TUE', date: 'Sep 15', theme: 'Upper Body — Push (Deload)',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Push-ups + arm circles + shoulder taps', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB floor press', sets: 2, reps: '12', tempo: '2-1-1-0', load: 'Wk2 weight', who: 'John', notes: 'RIR 4.', track: true },
+              { name: 'DB standing overhead press', sets: 2, reps: '10', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true },
+              { name: 'DB lateral raise', sets: 2, reps: '15', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB overhead triceps extension', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Push-up + mountain climber (easy)', sets: 3, reps: '30s on / 30s off', tempo: '—', load: 'BW', who: 'John', notes: 'Easy.', isInterval: true, workSec: 30, restSec: 30 }
+            ]}
+          ]
+        },
+        {
+          day: 'THU', date: 'Sep 17', theme: 'Lower Body — Hinge (Deload)',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'March + bodyweight good mornings + leg swings', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'DB Romanian deadlift', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: 'RIR 4.', track: true },
+              { name: 'Split squat (rear foot on chair)', sets: 2, reps: '10/leg', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true },
+              { name: 'DB sumo squat', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true },
+              { name: 'DB calf raise', sets: 2, reps: '20', tempo: '2-0-2-0', load: 'Moderate', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'DB swing (easy)', sets: 3, reps: '30s on / 30s off', tempo: '—', load: 'Light-mod', who: 'John', notes: 'Easy pace.', isInterval: true, workSec: 30, restSec: 30 }
+            ]}
+          ]
+        },
+        {
+          day: 'FRI', date: 'Sep 18', theme: 'Upper Body — Pull (Deload)',
+          blocks: [
+            { name: 'Warmup', exercises: [
+              { name: 'Arm circles + light DB rows + band-style pull-aparts', sets: 1, reps: '3 min', tempo: '—', load: 'Easy', who: 'John', notes: '' }
+            ]},
+            { name: 'Main Work', exercises: [
+              { name: 'Bent-over DB row', sets: 2, reps: '12', tempo: '2-1-1-0', load: 'Wk2 weight', who: 'John', notes: 'RIR 4. Next block: start heavier than Wk1.', track: true },
+              { name: 'Single-arm DB row', sets: 2, reps: '10/side', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true },
+              { name: 'DB rear-delt fly', sets: 2, reps: '15', tempo: '2-0-1-0', load: 'Light', who: 'John', notes: '', track: true },
+              { name: 'DB hammer curl', sets: 2, reps: '12', tempo: '2-0-1-0', load: 'Light-mod', who: 'John', notes: '', track: true }
+            ]},
+            { name: 'Finisher', exercises: [
+              { name: 'Renegade row + plank (easy)', sets: 3, reps: '30s on / 30s off', tempo: '—', load: 'Light', who: 'John', notes: 'Easy.', isInterval: true, workSec: 30, restSec: 30 }
+            ]}
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 // Program registry + people. Each person maps to the program they follow.
-export const PROGRAMS = { ramp: PROGRAM, logan: LOGAN_PROGRAM };
+export const PROGRAMS = { ramp: PROGRAM, logan: LOGAN_PROGRAM, john: JOHN_PROGRAM };
 
 export const PEOPLE = [
   { name: 'D-Rock', programId: 'ramp', dot: 'bg-amber-500' },
   { name: 'Frank', programId: 'ramp', dot: 'bg-red-500' },
-  { name: 'Logan', programId: 'logan', dot: 'bg-sky-400' }
+  { name: 'Logan', programId: 'logan', dot: 'bg-sky-400' },
+  { name: 'John', programId: 'john', dot: 'bg-emerald-500' }
 ];
 
 export const programIdForPerson = (name) =>

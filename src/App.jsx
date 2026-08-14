@@ -58,7 +58,7 @@ export default function App() {
   const [view, setView] = useState('home');
   const [openSession, setOpenSession] = useState(null);
   const [rawState, setState] = useLocalStorage('replab_state_v1', {
-    logs: { ramp: { sets: {} }, logan: { sets: {} } },
+    logs: { ramp: { sets: {} }, logan: { sets: {} }, john: { sets: {} } },
     profile: 'D-Rock',
     soundEnabled: true
   });
